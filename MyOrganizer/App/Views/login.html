@@ -5,7 +5,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12 input-group">
-                <input type="text" class="form-control" placeholder="Username" ng-model="userLogin.username" required autofocus>
+                <input type="text" class="form-control" placeholder="User name" ng-model="userLogin.username" required autofocus>
             </div>
         </div>
         <div class="row">
@@ -18,14 +18,13 @@
                 <button class="col-xs-12 btn btn-warning" ng-click="loginUser()" ng-class="{'is-loading':inProgress}">Login</button>
             </div>
         </div>
-
         <div class="container">
-            <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)" class="alert col-xs-4 col-xs-offset-4">
+            <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + 'warning'" close="closeAlert($index)" class="alert col-xs-4 col-xs-offset-4">
                 {{alert.msg}}
             </div>
         </div>
 
-        <div class="col-xs-12 center registerText"><a ng-click="authenticate = !authenticate">Dont have an account? Register here</a></div>
+        <div class="col-xs-12 center registerText"><a href=" " ng-click="authenticate = !authenticate" >Dont have an account? Register here</a></div>
     </div>
 
     <div class="container-fluid col-xs-12 registerUser" ng-show="authenticate">
@@ -34,7 +33,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12 input-group">
-                <input type="text" class="form-control" placeholder="Username" ng-model="auth.username" required autofocus>
+                <input type="text" class="form-control" placeholder="User name" ng-model="auth.username" required autofocus>
             </div>
         </div>
         <div class="row">
@@ -60,10 +59,10 @@
         </div>
 
         <div class="container">
-            <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)" class="alert col-xs-4 col-xs-offset-4">
+            <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + 'warning'" close="closeAlert($index)" class="alert col-xs-4 col-xs-offset-4">
                 {{alert.msg}}
             </div>
         </div>
-        <div class="col-xs-12 center registerText"><a ng-click="authenticate = !authenticate">Already have an account? Login here</a></div>
+        <div class="col-xs-12 center registerText"><a href=" " ng-click="authenticate = !authenticate">Already have an account? Login here</a></div>
     </div>
 </div>

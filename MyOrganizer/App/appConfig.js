@@ -10,16 +10,25 @@
             templateUrl: "App/Views/login.html",
             controller: "loginController"
         })
-        .otherwise('/login');
+        .otherwise("/login");
 }]);
 
 app.run(["$rootScope", "$http", "$location", function ($rootScope, $http, $location) {
+
+
     //if a user logged in return the token
-    $rootScope.isLoggedIn = function () {
-        return !!sessionStorage.getItem("token")
+    $rootScope.isLoggedIn = () => {
+        return !!sessionStorage.getItem("token");
         console.log("inside isLoggedIn ");
         //console.log("token :", token );
-    }
+    };
+
+    //logout function
+    $rootScope.Logout = () => {
+        sessionStorage.removeItem("token");
+        console.log("inside Logout");
+        $location.path("/login");
+    };
 
     $rootScope.$on("$routeChangeStart", function (event, currentRoute) {
         var pageIsAccesibleWithoutBeingLoggedIn = false;

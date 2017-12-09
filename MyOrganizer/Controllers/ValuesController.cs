@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using MyOrganizer.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,9 +12,11 @@ namespace MyOrganizer.Controllers
     [Authorize]
     public class ValuesController : ApiController
     {
+        ApplicationDbContext db = new ApplicationDbContext();
         // GET api/values
         public IEnumerable<string> Get()
         {
+            //db.Users.Find(User.Identity.GetUserId()).AddressBooks.Add();
             return new string[] { "value1", "value2" };
         }
 

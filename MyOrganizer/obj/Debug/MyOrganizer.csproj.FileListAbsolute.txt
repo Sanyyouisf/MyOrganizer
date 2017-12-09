@@ -101,6 +101,6 @@ C:\Users\Developer\projects\MyOrganizer\MyOrganizer\bin\Microsoft.AI.WindowsServ
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\bin\Microsoft.AI.Web.xml
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.dll
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.pdb
-C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.csprojResolveAssemblyReference.cache
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.initialMigration.resources
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.csproj.GenerateResource.Cache
+C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.csprojResolveAssemblyReference.cache

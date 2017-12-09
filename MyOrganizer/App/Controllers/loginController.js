@@ -2,12 +2,12 @@
     console.log("inside loginController")
     $scope.username = "";
     $scope.password = "";
-   // $rootScope.currentToken = "";
+    $rootScope.currentToken = "";
     $scope.auth = {};
     $scope.userLogin = {};
     $scope.alerts = [];
     $scope.message = "hi Sany , Login page";
-    //$rootScope.user = user;
+    $rootScope.UserName = {};
 
     $scope.addAlert = function () {
         $scope.alerts.push({ msg: 'Another alert!' });
@@ -25,7 +25,7 @@
         console.log("inside loginUser function");
         $scope.error = "";
         $scope.alerts = [];
-        $scope.inProgress = true;
+        //$scope.inProgress = true;
         $http
             ({
                 method: 'POST',
@@ -46,11 +46,14 @@
             .then((result) => {
                 console.log("result in login function :", result);
                 sessionStorage.setItem('token', result.data.access_token);
-                currentToken = sessionStorage.getItem('token');               
+                currentToken = sessionStorage.getItem('token'); 
+                //console.log("currentToken :", currentToken);
                 $http.defaults.headers.common['Authorization'] = `bearer ${result.data.access_token}`;
-                $scope.inProgress = false;
+                //$scope.inProgress = false;
+                $rootScope.UserName = result.data.userName;
                 console.log("you loged in as  :", result.data.userName);//the user name which is actually the email.
                 //$scope.alerts.push({ msg: "you loged in as  :" + result.data.userName });// may i need it later to stay for half min 
+               //console.log("you loged in as  :", $rootScope.UserName);
                 $location.path("/");
             })
             .catch((error) => {
@@ -58,12 +61,13 @@
                 $scope.error = error.data.error_description;
                 $scope.alerts.push({ msg: error.data.error_description });
                 console.log(" error in login function :", $scope.error);
-                $scope.inProgress = false; 
+                //$scope.inProgress = false; 
             });
     }
 
     //register function
     $scope.registerUser = () => {
+        $scope.alerts = [];
         var auth = $scope.auth;
         $http({
             method: 'POST',
@@ -76,10 +80,14 @@
                 confirmPassword: auth.confirm
             }
         })
-            .then((resultz) => {
-                console.log("resultz in register :", resultz);
-                console.log("regestration Done welcome :", resultz.config.data.UserName);
-                $location.path("/");
+            .then((result) => {
+                console.log("resultz in register :", result);
+                //sessionStorage.setItem('token', result.data.access_token);
+                //currentToken = sessionStorage.getItem('token');
+                //$rootScope.UserName = result.config.data.UserName;
+                //console.log("currentToken :", currentToken);
+                console.log("regestration Done welcome :", result.config.data.UserName);
+                $scope.authenticate = false;
             })
             .catch((error) => {
                 $scope.error = error.data.error_description;

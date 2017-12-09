@@ -1,4 +1,4 @@
-﻿app.controller("homeController", ["$scope", "$http", function ($scope, $http) {
+﻿app.controller("homeController", ["$scope", "$http","$rootScope", function ($scope, $http, $rootScope) {
     console.log("in homeController");
     $http.get("/Api/values")
         .then((result) => {
@@ -11,5 +11,6 @@
             $scope.error = error.data.error_description;
             console.log("erro error in home controller :", $scope.error);
         });
-    $scope.message = "hi Sany this is homeController "
+
+    $scope.message = "hi this is homeController "
 }]);
