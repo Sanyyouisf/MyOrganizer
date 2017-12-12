@@ -10,6 +10,26 @@
             templateUrl: "App/Views/login.html",
             controller: "loginController"
         })
+        .when("/addressBook",
+        {
+            templateUrl: "App/Views/addressBook.html",
+            controller: "addressBookController"
+        })
+        .when("/meeting",
+        {
+            templateUrl: "App/Views/meeting.html",
+            controller: "meetingController"
+        })
+        .when("/task",
+        {
+            templateUrl: "App/Views/task.html",
+            controller: "taskController"
+        })
+        .when("/test",
+        {
+            templateUrl: "App/Views/test.html",
+            controller: "testController"
+        })
         .otherwise("/login");
 }]);
 
@@ -56,7 +76,6 @@ app.run(["$rootScope", "$http", "$location", function ($rootScope, $http, $locat
         var token = sessionStorage.getItem("token");
         if (token)
             $http.defaults.headers.common["Authorization"] = `bearer ${token}`;
-
     })
 
 }

@@ -227,17 +227,30 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AddressBooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MeetingsController.cs" />
+    <Compile Include="Controllers\TasksController.cs" />
+    <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DataModels\AddressBooks.cs" />
     <Compile Include="DataModels\Meetings.cs" />
     <Compile Include="DataModels\Tasks.cs" />
+    <Compile Include="DataModels\Tests.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201712052353590_initialMigration.cs" />
     <Compile Include="Migrations\201712052353590_initialMigration.Designer.cs">
       <DependentUpon>201712052353590_initialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712120148462_AddtestModel.cs" />
+    <Compile Include="Migrations\201712120148462_AddtestModel.Designer.cs">
+      <DependentUpon>201712120148462_AddtestModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712120316312_renameTestToTests.cs" />
+    <Compile Include="Migrations\201712120316312_renameTestToTests.Designer.cs">
+      <DependentUpon>201712120316312_renameTestToTests.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -251,10 +264,18 @@
   <ItemGroup>
     <Content Include="App\app.js" />
     <Content Include="App\appConfig.js" />
+    <Content Include="App\Controllers\addressBookController.js" />
     <Content Include="App\Controllers\homeController.js" />
     <Content Include="App\Controllers\loginController.js" />
+    <Content Include="App\Controllers\meetingController.js" />
+    <Content Include="App\Controllers\taskController.js" />
+    <Content Include="App\Controllers\testController.js" />
+    <Content Include="App\Views\addressBook.html" />
     <Content Include="App\Views\home.html" />
     <Content Include="App\Views\login.html" />
+    <Content Include="App\Views\meeting.html" />
+    <Content Include="App\Views\task.html" />
+    <Content Include="App\Views\test.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -339,6 +360,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712052353590_initialMigration.resx">
       <DependentUpon>201712052353590_initialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712120148462_AddtestModel.resx">
+      <DependentUpon>201712120148462_AddtestModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712120316312_renameTestToTests.resx">
+      <DependentUpon>201712120316312_renameTestToTests.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
