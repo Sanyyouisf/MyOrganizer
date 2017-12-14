@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyOrganizer.Models;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace MyOrganizer.DataModels
@@ -21,6 +22,6 @@ namespace MyOrganizer.DataModels
 
         public string Description { get; set; }
 
-        public virtual int UserId { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }

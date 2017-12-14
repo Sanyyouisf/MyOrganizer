@@ -15,6 +15,11 @@
             templateUrl: "App/Views/addressBook.html",
             controller: "addressBookController"
         })
+        .when("/addressBook/new",
+        {
+            templateUrl: "App/Views/newAddressBook.html",
+            controller:"addressBookController"
+        })
         .when("/meeting",
         {
             templateUrl: "App/Views/meeting.html",

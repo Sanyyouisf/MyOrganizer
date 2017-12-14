@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyOrganizer.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -11,7 +12,7 @@ namespace MyOrganizer.DataModels
 
         [Required]
         [Display(Name = "First Name")]
-        public string FistName { get; set; }
+        public string FirstName { get; set; }
 
         [Required]
         [Display(Name = "Last Name")]
@@ -19,7 +20,7 @@ namespace MyOrganizer.DataModels
 
         [Required]
         [Display(Name = "Telephone Number")]
-        public int Tel { get; set; }
+        public string Tel { get; set; }
 
         [Required]
         [Display(Name = "Email Address")]
@@ -39,7 +40,7 @@ namespace MyOrganizer.DataModels
 
         public RelationShip RelationShip { get; set; }
 
-        public virtual int UserId { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 
     [DefaultValue(Others)]

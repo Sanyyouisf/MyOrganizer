@@ -10,9 +10,11 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using MyOrganizer.DataModels;
 using MyOrganizer.Models;
+using Microsoft.AspNet.Identity;
 
 namespace MyOrganizer.Controllers
 {
+    [Authorize]
     public class AddressBooksController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -79,6 +81,7 @@ namespace MyOrganizer.Controllers
             {
                 return BadRequest(ModelState);
             }
+            addressBooks.User = db.Users.Find(User.Identity.GetUserId());
 
             db.AddressBooks.Add(addressBooks);
             db.SaveChanges();

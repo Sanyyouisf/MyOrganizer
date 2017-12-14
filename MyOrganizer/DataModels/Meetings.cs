@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyOrganizer.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace MyOrganizer.DataModels
         public Boolean Done { get; set; } = false ;
 
         public string Notes { get; set; }
-
-        public virtual int UserId { get; set; }
+    
+        public virtual ApplicationUser User { get; set; }
     }
 }

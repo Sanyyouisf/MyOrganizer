@@ -252,6 +252,18 @@
     <Compile Include="Migrations\201712120316312_renameTestToTests.Designer.cs">
       <DependentUpon>201712120316312_renameTestToTests.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712130044558_ChangeTelToString.cs" />
+    <Compile Include="Migrations\201712130044558_ChangeTelToString.Designer.cs">
+      <DependentUpon>201712130044558_ChangeTelToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712130309262_ChangeUserIdToUserInTheModels.cs" />
+    <Compile Include="Migrations\201712130309262_ChangeUserIdToUserInTheModels.Designer.cs">
+      <DependentUpon>201712130309262_ChangeUserIdToUserInTheModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712132327471_changeFistNameToFirstName.cs" />
+    <Compile Include="Migrations\201712132327471_changeFistNameToFirstName.Designer.cs">
+      <DependentUpon>201712132327471_changeFistNameToFirstName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -274,6 +286,7 @@
     <Content Include="App\Views\home.html" />
     <Content Include="App\Views\login.html" />
     <Content Include="App\Views\meeting.html" />
+    <Content Include="App\Views\newAddressBook.html" />
     <Content Include="App\Views\task.html" />
     <Content Include="App\Views\test.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -366,6 +379,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712120316312_renameTestToTests.resx">
       <DependentUpon>201712120316312_renameTestToTests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712130044558_ChangeTelToString.resx">
+      <DependentUpon>201712130044558_ChangeTelToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712130309262_ChangeUserIdToUserInTheModels.resx">
+      <DependentUpon>201712130309262_ChangeUserIdToUserInTheModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712132327471_changeFistNameToFirstName.resx">
+      <DependentUpon>201712132327471_changeFistNameToFirstName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

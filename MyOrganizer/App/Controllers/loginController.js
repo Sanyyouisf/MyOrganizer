@@ -4,7 +4,11 @@
     $scope.password = "";
     $rootScope.currentToken = "";
     $scope.auth = {};
-    $scope.userLogin = {};
+    $scope.userLogin = {
+        username: "sany4",
+        password:"Admin@123"
+    };
+  
     $scope.alerts = [];
     $scope.message = "hi Sany , Login page";
     $rootScope.UserName = {};
@@ -53,7 +57,7 @@
                 $rootScope.UserName = result.data.userName;
                 console.log("you loged in as  :", result.data.userName);//the user name which is actually the email.
                 //$scope.alerts.push({ msg: "you loged in as  :" + result.data.userName });// may i need it later to stay for half min 
-               //console.log("you loged in as  :", $rootScope.UserName);
+                console.log("you loged in as  another :", $rootScope.UserName);
                 $location.path("/");
             })
             .catch((error) => {

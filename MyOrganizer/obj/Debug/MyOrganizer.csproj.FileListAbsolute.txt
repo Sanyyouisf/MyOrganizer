@@ -105,4 +105,7 @@ C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrat
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.csproj.GenerateResource.Cache
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.AddtestModel.resources
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.renameTestToTests.resources
+C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.ChangeTelToString.resources
+C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.ChangeUserIdToUserInTheModels.resources
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.csprojResolveAssemblyReference.cache
+C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.changeFistNameToFirstName.resources
