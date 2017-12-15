@@ -73,7 +73,7 @@ namespace MyOrganizer.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/AddressBooks
+        // POST: api/AddressBooks/new
         [ResponseType(typeof(AddressBooks))]
         public IHttpActionResult PostAddressBooks(AddressBooks addressBooks)
         {

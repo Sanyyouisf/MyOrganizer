@@ -286,7 +286,8 @@
     <Content Include="App\Views\home.html" />
     <Content Include="App\Views\login.html" />
     <Content Include="App\Views\meeting.html" />
-    <Content Include="App\Views\newAddressBook.html" />
+    <Content Include="App\Views\newAddress.html" />
+    <Content Include="App\Views\singleAddress.html" />
     <Content Include="App\Views\task.html" />
     <Content Include="App\Views\test.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />

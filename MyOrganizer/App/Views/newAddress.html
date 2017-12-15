@@ -1,4 +1,21 @@
-﻿<h3>New Address</h3>
+﻿<div class="navbar navbar-inverse navbar-fixed-top NewAddressNavBar" ng-hide="AddressListNavBar">
+    <div class="container">
+        <div class="navbar-collapse collapse ">
+            <ul class="nav navbar-nav navbar-left" ng-if='isLoggedIn()'>
+                <li><a href=""> {{UserName}}'s Address Book</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook">Address List</a></li>
+                <!--<li><a ng-if='isLoggedIn()' ng-href="#!/addressBook/new">New Address</a></li>-->
+                <li><a ng-if='isLoggedIn()' ng-href="#!/task">Task</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/meeting">Meeting</a></li>
+                <li><a ng-if='isLoggedIn()' ng-click='Logout()' href=" ">Logout </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<h3>New Address</h3>
 <div class="form-group">
     <div class="form-group">
         <input type="text" class="form-control " placeholder="First Name" ng-model="newAddress.FirstName" />
@@ -25,4 +42,10 @@
         <input type="text" class="form-control " placeholder="Zipcode" ng-model="newAddress.Zipcode" />
     </div>  
     <button class="btn btn-default " ng-click="addNewAddress()">Submit</button>
+
+    <div class="container">
+        <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + 'warning'" close="closeAlert($index)" class="alert col-xs-4 col-xs-offset-4">
+            {{alert.msg}}
+        </div>
+    </div>
 </div>

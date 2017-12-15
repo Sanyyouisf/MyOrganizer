@@ -1,4 +1,19 @@
-﻿<ul>
+﻿<div class="navbar navbar-inverse navbar-fixed-top HomeNavBar" ng-hide="MainNavBar">
+    <div class="container">
+        <div class="navbar-collapse collapse ">
+            <ul class="nav navbar-nav navbar-left" ng-if='isLoggedIn()'>
+                <li><a href=""> {{UserName}}'s Address Book</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook">Address Book</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/task">Task</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/meeting">Meeting</a></li>
+                <li><a ng-if='isLoggedIn()' ng-click='Logout()' href=" ">Logout </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<ul>
     <li ng-repeat="value in values"> {{value}}</li>
 </ul>
 

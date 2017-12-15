@@ -1,12 +1,12 @@
-﻿<div class="navbar navbar-inverse navbar-fixed-top AddressBookNavBar" ng-hide="MainNavBar">
+﻿<div class="navbar navbar-inverse navbar-fixed-top AddressListNavBar" ng-hide="NewAddressNavBar">
     <div class="container">
         <div class="navbar-collapse collapse ">
             <ul class="nav navbar-nav navbar-left" ng-if='isLoggedIn()'>
                 <li><a href=""> {{UserName}}'s Address Book</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li ><a ng-if='isLoggedIn()' ng-href="#!/addressBook/list" ng-show="NewAddressBook">Address List</a></li>
-                <li ><a ng-if='isLoggedIn()' ng-href="#!/addressBook/new">New Address</a></li>
+                <!--<li ><a ng-if='isLoggedIn()' ng-href="#!/addressBook" >Address List</a></li>-->
+                <li ><a ng-if='isLoggedIn()' ng-href="#!/addressBook/new" >New Address</a></li>
                 <li ><a ng-if='isLoggedIn()' ng-href="#!/task">Task</a></li>
                 <li ><a ng-if='isLoggedIn()' ng-href="#!/meeting">Meeting</a></li>
                 <li ><a ng-if='isLoggedIn()' ng-click='Logout()' href=" ">Logout </a></li>
@@ -15,35 +15,45 @@
     </div>
 </div>
 
-<h3>Add New Address</h3>
-<div class="form-group NewAddressBook" ng-hide="NewAddressBook">
-    <div class="form-group">
-        <input type="text" class="form-control " placeholder="First Name" ng-model="newAddress.FirstName" />
+
+<div class="AddressList" ng-hide="NewAddressBook">
+    <h1>Address List</h1>
+    <div class="searchText ">
+        <input type="text" class="input-lg" placeholder="Search For ..." ng-model="searchText">
     </div>
-    <div class="form-group">
-        <input type="text" class="form-control " placeholder="Last Name" ng-model="newAddress.LastName" />
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control " placeholder="Tel" ng-model="newAddress.Tel" />
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control " placeholder="Email" ng-model="newAddress.Email" />
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control " placeholder="Street" ng-model="newAddress.Street" />
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control " placeholder="City" ng-model="newAddress.City" />
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control " placeholder="State" ng-model="newAddress.State" />
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control " placeholder="Zipcode" ng-model="newAddress.Zipcode" />
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control " placeholder="RelationShip" ng-model="newAddress.RelationShip" />
-    </div>
-    <button class="btn btn-default " ng-click="addNewAddress(newAddress)">Submit</button>
+
+    <div ng-repeat="address in addressBookList | filter: searchText">
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <div class="col-xs-8" ng-click="getSingleAddress(address.Id)">
+                        <div class="col-xs-1"> {{address.FirstName}}</div>
+                        <div class="col-xs-1"> {{address.LastName}}</div>
+                        <div class="col-xs-3"> {{address.Tel}} </div>
+                        <!--<div class="col-xs-4"> {{address.Email}}</div>
+                    <div class="col-xs-5"> {{address.Street}}</div>
+                    <div class="col-xs-2"> {{address.City}} </div>
+                    <div class="col-xs-2"> {{address.State}} </div>
+                    <div class="col-xs-3"> {{address.Zipcode}} </div>
+                    <div class="col-xs-2"> {{address.RelationShip}} </div>-->
+                    </div>
+
+                    <!--<div class="col-xs-1 col-xs-offset-1">
+                    <a ng-href="#!/addressBooks/edit/{{item.id}}">
+                        <button class="btn btn-danger fa fa-pencil-square-o"></button>
+                    </a>
+                </div>
+
+                <div class="col-xs-1 col-xs-offset-1">
+                    <a ng-href="#!/addressBooks/list">
+                        <button class="btn btn-danger fa fa-trash-o" ng-click="deleteAddress(item.id)"></button>
+                    </a>
+                </div>-->
+
+                </div>
+            </div>
 </div>
+</div>
+
+
 

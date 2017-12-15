@@ -17,8 +17,13 @@
         })
         .when("/addressBook/new",
         {
-            templateUrl: "App/Views/newAddressBook.html",
+            templateUrl: "App/Views/newAddress.html",
             controller:"addressBookController"
+        })
+        .when("/addressbook/:Id",
+        {
+            templateUrl: "App/Views/singleAddress.html",
+            controller: "addressBookController"
         })
         .when("/meeting",
         {
