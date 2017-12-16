@@ -99,13 +99,13 @@ C:\Users\Developer\projects\MyOrganizer\MyOrganizer\bin\Microsoft.AI.DependencyC
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\bin\Microsoft.AI.Web.xml
-C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.dll
-C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.pdb
+C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.csprojResolveAssemblyReference.cache
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.initialMigration.resources
-C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.csproj.GenerateResource.Cache
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.AddtestModel.resources
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.renameTestToTests.resources
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.ChangeTelToString.resources
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.ChangeUserIdToUserInTheModels.resources
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.changeFistNameToFirstName.resources
-C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.csprojResolveAssemblyReference.cache
+C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.csproj.GenerateResource.Cache
+C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.dll
+C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.pdb

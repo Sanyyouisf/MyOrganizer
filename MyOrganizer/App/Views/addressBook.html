@@ -23,20 +23,18 @@
     </div>
 
     <div ng-repeat="address in addressBookList | filter: searchText">
+        <a href="">
             <div class="panel panel-default">
-                <div class="panel-body">
 
+                <div class="panel-body">
                     <div class="col-xs-8" ng-click="getSingleAddress(address.Id)">
                         <div class="col-xs-1"> {{address.FirstName}}</div>
                         <div class="col-xs-1"> {{address.LastName}}</div>
                         <div class="col-xs-3"> {{address.Tel}} </div>
-                        <!--<div class="col-xs-4"> {{address.Email}}</div>
-                    <div class="col-xs-5"> {{address.Street}}</div>
-                    <div class="col-xs-2"> {{address.City}} </div>
-                    <div class="col-xs-2"> {{address.State}} </div>
-                    <div class="col-xs-3"> {{address.Zipcode}} </div>
-                    <div class="col-xs-2"> {{address.RelationShip}} </div>-->
                     </div>
+                </div>
+            </div>
+        </a>
 
                     <!--<div class="col-xs-1 col-xs-offset-1">
                     <a ng-href="#!/addressBooks/edit/{{item.id}}">
@@ -50,7 +48,7 @@
                     </a>
                 </div>-->
 
-                </div>
+               
             </div>
 </div>
 </div>

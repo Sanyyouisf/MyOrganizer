@@ -22,7 +22,8 @@ namespace MyOrganizer.Controllers
         // GET: api/AddressBooks
         public IQueryable<AddressBooks> GetAddressBooks()
         {
-            return db.AddressBooks;
+            string userId = User.Identity.GetUserId();
+            return db.AddressBooks.Where(a => a.User.Id == userId);
         }
 
         // GET: api/AddressBooks/5
@@ -33,6 +34,11 @@ namespace MyOrganizer.Controllers
             if (addressBooks == null)
             {
                 return NotFound();
+            }
+
+            if (addressBooks.User.Id != User.Identity.GetUserId())
+            {
+                return Unauthorized();
             }
 
             return Ok(addressBooks);

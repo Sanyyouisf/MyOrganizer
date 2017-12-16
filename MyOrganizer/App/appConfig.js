@@ -23,7 +23,7 @@
         .when("/addressbook/:Id",
         {
             templateUrl: "App/Views/singleAddress.html",
-            controller: "addressBookController"
+            controller: "singleAddressBookController"
         })
         .when("/meeting",
         {
@@ -84,8 +84,10 @@ app.run(["$rootScope", "$http", "$location", function ($rootScope, $http, $locat
         }
 
         var token = sessionStorage.getItem("token");
-        if (token)
+        if (token) {
             $http.defaults.headers.common["Authorization"] = `bearer ${token}`;
+            $rootScope.UserName = sessionStorage.getItem("UserName");
+        }
     })
 
 }

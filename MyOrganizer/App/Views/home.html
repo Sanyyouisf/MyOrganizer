@@ -5,7 +5,7 @@
                 <li><a href=""> {{UserName}}'s Address Book</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook">Address Book</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook" ng-click="getAddressBookList()">Address Book</a></li>
                 <li><a ng-if='isLoggedIn()' ng-href="#!/task">Task</a></li>
                 <li><a ng-if='isLoggedIn()' ng-href="#!/meeting">Meeting</a></li>
                 <li><a ng-if='isLoggedIn()' ng-click='Logout()' href=" ">Logout </a></li>
@@ -13,8 +13,5 @@
         </div>
     </div>
 </div>
-<ul>
-    <li ng-repeat="value in values"> {{value}}</li>
-</ul>
 
 <h2>hello {{UserName}}</h2>

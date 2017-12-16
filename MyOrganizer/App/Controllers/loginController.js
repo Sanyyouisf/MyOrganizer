@@ -54,7 +54,9 @@
                 //console.log("currentToken :", currentToken);
                 $http.defaults.headers.common['Authorization'] = `bearer ${result.data.access_token}`;
                 //$scope.inProgress = false;
+                //to keep the user name all the time 
                 $rootScope.UserName = result.data.userName;
+                sessionStorage.setItem("UserName", result.data.userName);
                 console.log("you loged in as  :", result.data.userName);//the user name which is actually the email.
                 //$scope.alerts.push({ msg: "you loged in as  :" + result.data.userName });// may i need it later to stay for half min 
                 console.log("you loged in as  another :", $rootScope.UserName);

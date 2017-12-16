@@ -1,7 +1,7 @@
 ﻿app.controller("addressBookController", ["$scope", "$http", "$rootScope", "$location", function ($scope, $http, $rootScope, $location) {
     console.log("inside addressBookController");
     $scope.addressBookList = [];
-    $scope.singleAddress = {};
+    $scope.singleaddress = {};
     $scope.alerts = [];
     $scope.newAddress = {};
 
@@ -19,29 +19,25 @@
 
 //-----------------------------------------------------------------------
     //to get all the address Book for the user
-    $http.get("/api/AddressBooks")
-        .then((result) => {
-            $scope.addressBookList = result.data;
-            console.log(" result.data :", $scope.addressBookList);
-        })
-        .catch((error) => {
-            console.log("error in get AddressList:", error);
-        });
+    $scope.getAddressBookList = () => {
+        $http.get("/api/AddressBooks")
+            .then((result) => {
+                $scope.addressBookList = result.data;
+                console.log(" result.data getAddressBookList :", $scope.addressBookList);
+            })
+            .catch((error) => {
+                console.log("error in get AddressList:", error);
+            });
+    };
+
+    $scope.getAddressBookList();
 
 //-----------------------------------------------------------------------
     //get one address
     $scope.getSingleAddress = (Id) => {
-        $scope.singleAddress.Id = Id;
-        console.log("singleAddress.Id :", $scope.singleAddress.Id);
-        $http.get(`/api/AddressBooks/${Id}`)
-            .then((result) => {
-                $scope.singleaddress = result.data;
-                console.log("you request this address :", $scope.singleaddress);
-                $location.path(`addressbook/${Id}`);
-            })
-            .catch((error) => {
-                console.log("error in getSingleAddress:", error);
-            });
+        $location.path(`addressbook/${Id}`);
+        console.log("the Id", Id);
+       
     };
 //-----------------------------------------------------------------------
     //adding new Address
@@ -70,6 +66,5 @@
     };
     
 }
-
 
 ]);
