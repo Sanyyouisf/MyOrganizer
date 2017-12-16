@@ -1,29 +1,30 @@
 ﻿<h1>single address page</h1>
-<div class="panel panel-default">
-   <div class="panel-body">
-        <div class="col-xs-8" >
-            <div class="col-xs-1"> FirstName {{singleAddress.FirstName}}</div>
-            <div class="col-xs-1"> {{singleAddress.LastName}}</div>
+<div class="panel panel-default panel-body">
+   <!--<div class="panel-body">-->
+        <div class="col-xs-12" >
+            <div class="col-xs-3"> {{singleAddress.FirstName}} &nbsp; {{singleAddress.LastName}}</div>
+            <!--<div class="col-xs-1"> {{singleAddress.LastName}}</div>-->
             <div class="col-xs-3"> {{singleAddress.Tel}} </div>
             <div class="col-xs-4"> {{singleAddress.Email}}</div>
-            <div class="col-xs-5"> {{singleAddress.Street}}</div>
-            <div class="col-xs-2"> {{singleAddress.City}}</div>
+            <div class="col-xs-6"> {{singleAddress.Street}}  &nbsp; {{singleAddress.City}} &nbsp; {{singleAddress.State}} {{singleAddress.Zipcode}}</div>
+            <!--<div class="col-xs-2"> {{singleAddress.City}}</div>
             <div class="col-xs-2"> {{singleAddress.State}}</div>
-            <div class="col-xs-3"> {{singleAddress.Zipcode}}</div>
-            <div class="col-xs-2"> {{singleAddress.RelationShip}}</div>
+            <div class="col-xs-3"> {{singleAddress.Zipcode}}</div>-->
+            <div class="col-xs-1"> {{singleAddress.RelationShip}}</div>
 
-            <!--<div class="col-xs-1 col-xs-offset-1">
-            <a ng-href="#!/addressBooks/edit/{{item.id}}">
-                <button class="btn btn-danger fa fa-pencil-square-o"></button>
-            </a>
-        </div>
+            
 
-        <div class="col-xs-1 col-xs-offset-1">
-            <a ng-href="#!/addressBooks/list">
-                <button class="btn btn-danger fa fa-trash-o" ng-click="deleteAddress(item.id)"></button>
-            </a>
-        </div>-->
-
-         </div>
+         <!--</div>-->
      </div>
+    <div class="col-xs-2 ">
+        <!--<a ng-href="#!/addressbooks/edit/{{item.id}}">-->
+        <button class="btn btn-danger fa fa-pencil-square-o" ng-click="editSingleAddress(singleAddress.Id)"></button>
+        <!--</a>-->
+    </div>
+
+    <div class="col-xs-2 ">
+        <!--<a ng-href="#!/addressBooks/list">-->
+        <button class="btn btn-danger fa fa-trash-o" ng-click="deleteSingleAddress(singleAddress.Id)"></button>
+        <!--</a>-->
+    </div>
 </div>

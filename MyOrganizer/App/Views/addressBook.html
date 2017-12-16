@@ -24,15 +24,13 @@
 
     <div ng-repeat="address in addressBookList | filter: searchText">
         <a href="">
-            <div class="panel panel-default">
-
-                <div class="panel-body">
+            <div class="panel panel-default panel-body">
+                <!--<div class="panel-body">-->
                     <div class="col-xs-8" ng-click="getSingleAddress(address.Id)">
-                        <div class="col-xs-1"> {{address.FirstName}}</div>
-                        <div class="col-xs-1"> {{address.LastName}}</div>
-                        <div class="col-xs-3"> {{address.Tel}} </div>
+                        <div class="col-xs-4">{{address.FirstName}} &nbsp; {{address.LastName}}</div>
+                        <div class="col-xs-2"> {{address.Tel}} </div>
                     </div>
-                </div>
+                <!--</div>-->
             </div>
         </a>
 

@@ -36,8 +36,7 @@
     //get one address
     $scope.getSingleAddress = (Id) => {
         $location.path(`addressbook/${Id}`);
-        console.log("the Id", Id);
-       
+        console.log("the Id", Id);    
     };
 //-----------------------------------------------------------------------
     //adding new Address
