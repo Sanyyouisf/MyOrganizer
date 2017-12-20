@@ -3,7 +3,7 @@
     $scope.addressBookList = [];
     $scope.singleaddress = {};
     $scope.alerts = [];
-    $scope.newAddress = {};
+    $scope.newAddress = { RelationShip:2};
 
 //-----------------------------------------------------------------------
     //alerts
@@ -34,8 +34,9 @@
 
 //-----------------------------------------------------------------------
     //get one address
-    $scope.getSingleAddress = (Id) => {
-        $location.path(`addressbook/${Id}`);
+    $scope.getsingleAddress = (Id) => {
+        $location.path(`/addressBook/${Id}`);
+        //getSingleAddress(Id);
         console.log("the Id", Id);    
     };
 //-----------------------------------------------------------------------
@@ -51,12 +52,14 @@
                 City: $scope.newAddress.City,
                 State: $scope.newAddress.State,
                 Zipcode: $scope.newAddress.Zipcode,
-                Relationship: $scope.newAddress.Relationship
+                RelationShip: $scope.newAddress.RelationShip,
+                Id: Id
             }))
             .then((result) => {
                 console.log("result in addNewAddress :", result.data);
                 $scope.alerts = [];
                 $location.path("/addressBook");
+              
             })
             .catch((error) => {
                 console.log("error in addNewAddress:", error.data.Message);

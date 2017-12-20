@@ -20,10 +20,15 @@
             templateUrl: "App/Views/newAddress.html",
             controller:"addressBookController"
         })
-        .when("/addressbook/:Id",
+        .when("/addressBook/:Id",
         {
             templateUrl: "App/Views/singleAddress.html",
             controller: "singleAddressBookController"
+        })
+        .when("/addressBook/edit/:Id",
+        {
+            templateUrl: "App/Views/editAddress.html",
+            controller:"editAddressBookController"
         })
         .when("/meeting",
         {
@@ -34,6 +39,11 @@
         {
             templateUrl: "App/Views/task.html",
             controller: "taskController"
+        })
+        .when("/task/new",
+        {
+            templateUrl:"App/Views/newTask.html",
+            controller:"addNewTaskController"
         })
         .when("/test",
         {

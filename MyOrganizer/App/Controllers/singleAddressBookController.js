@@ -1,26 +1,45 @@
 ﻿app.controller("singleAddressBookController", ["$scope", "$http", "$routeParams", "$rootScope", "$location", function ($scope,$http,$routeParams, $rootScope, $location) {
    // console.log("$routeParams.Id", $routeParams.singleAddressId);
-    var Id = $routeParams.Id;
-    //console.log("singleAddress.Id :", $scope.address.Id);
-    $http.get(`/api/AddressBooks/${Id}`)
-        .then((resultSingleAddress) => {
-            $scope.singleAddress = resultSingleAddress.data;
-            //result.data.Id = Id;
-            //resolve($scope.singleaddress);
-            console.log("you request this address:", $scope.singleAddress);
+    $scope.editedAddress = {};
+    $scope.alerts = [];
 
-        })
-        .catch((error) => {
-            console.log("error in getSingleAddress:", error);
-        });
 
-//------------------------------------------------------
-    //to edit address
-    $scope.editSingleAddress = (Id) => {
-        $location.path(`addressbook/${Id}`);
-        console.log("the Id", Id);
+    $scope.addAlert = function () {
+        $scope.alerts.push({ msg: 'Another alert!' });
+        console.log("inside addAlert");
     };
 
+    $scope.closeAlert = function (index) {
+        $scope.alerts.splice(index, 1);
+        console.log("inside closeAlert");
+    };
+
+    var Id = $routeParams.Id;
+    //console.log("singleAddress.Id :", $scope.address.Id);
+//---------------------------------------------------------------------------------
+    //to get the address list 
+    //$rootscope.getsingleAddress = (Id) => {
+        $http.get(`/api/AddressBooks/${Id}`)
+            .then((resultSingleAddress) => {
+                $scope.singleAddress = resultSingleAddress.data;
+                //result.data.Id = Id;
+                //resolve($scope.singleaddress);
+                console.log("you request this address:", $scope.singleAddress);
+
+            })
+            .catch((error) => {
+                console.log("error in getSingleAddress:", error);
+            });
+    //};
+
+    //getsingleAddress();
+
+
+//------------------------------------------------------------------
+        $scope.editSingleAddress = (Id)=> {
+            $location.path(`/addressBook/edit/${Id}`);
+            console.log("the id to edit :", Id);
+        };
 //-------------------------------------------------------------------
     //to delete the address
     $scope.deleteSingleAddress = (Id) => {
@@ -33,7 +52,7 @@
             .catch((error) => {
                 console.log("error in deleteSingleAddress:", error);
             })
-        $location.path("addressBook");
+        $location.path("/addressBook");
     };
 
     

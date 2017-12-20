@@ -6,7 +6,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook">Address List</a></li>
-                <!--<li><a ng-if='isLoggedIn()' ng-href="#!/addressBook/new">New Address</a></li>-->
+                <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook/new">New Address</a></li>
                 <li><a ng-if='isLoggedIn()' ng-href="#!/task">Task</a></li>
                 <li><a ng-if='isLoggedIn()' ng-href="#!/meeting">Meeting</a></li>
                 <li><a ng-if='isLoggedIn()' ng-click='Logout()' href=" ">Logout </a></li>
@@ -15,45 +15,47 @@
     </div>
 </div>
 
-<h3>New Address</h3>
+<h3>Edit Address</h3>
 <div class="form-group">
     <div class="form-group">
-        <input type="text" class="form-control " placeholder="First Name" ng-model="newAddress.FirstName" />
+        <input type="text" class="form-control " placeholder="singleAddress.FirstName" ng-model="singleAddress.FirstName" />
     </div>
     <div class="form-group">
-        <input type="text" class="form-control " placeholder="Last Name" ng-model="newAddress.LastName" />
+        <input type="text" class="form-control " placeholder="singleAddress.LastName" ng-model="singleAddress.LastName" />
     </div>
     <div class="form-group">
-        <input type="text" class="form-control " placeholder="Tel" ng-model="newAddress.Tel" />
+        <input type="text" class="form-control " placeholder="singleAddress.Tel" ng-model="singleAddress.Tel" />
     </div>
     <div class="form-group">
-        <input type="text" class="form-control " placeholder="Email" ng-model="newAddress.Email" />
+        <input type="text" class="form-control " placeholder="singleAddress.Email" ng-model="singleAddress.Email" />
     </div>
     <div class="form-group">
-        <input type="text" class="form-control " placeholder="Street" ng-model="newAddress.Street" />
+        <input type="text" class="form-control " placeholder="singleAddress.Street" ng-model="singleAddress.Street" />
     </div>
     <div class="form-group">
-        <input type="text" class="form-control " placeholder="City" ng-model="newAddress.City" />
+        <input type="text" class="form-control " placeholder="singleAddress.City" ng-model="singleAddress.City" />
     </div>
     <div class="form-group">
-        <input type="text" class="form-control " placeholder="State" ng-model="newAddress.State" />
+        <input type="text" class="form-control " placeholder="singleAddress.State" ng-model="singleAddress.State" />
     </div>
     <div class="form-group">
-        <input type="text" class="form-control " placeholder="Zipcode" ng-model="newAddress.Zipcode" />
-    </div>  
-    <!--<div class="form-group">
-        <input type="text" class="form-control " placeholder="RelationShip" ng-model="newAddress.RelationShip" />
-    </div >--> 
+        <input type="text" class="form-control " placeholder="singleAddress.Zipcode" ng-model="singleAddress.Zipcode" />
+    </div>
+    <<!--div class="form-group">
+        <input type="text" class="form-control " placeholder="singleAddress.RelationShip" ng-model="singleAddress.RelationShip" />
+    </div>-->
+
     <label>RelationShip</label>
     <div class="form-group">
-        <select ng-model="newAddress.RelationShip">
-            <option>others</option>
-            <option value="0" >Family</option>
+        <select ng-model="singleAddress.RelationShip">
+            <option value="0">Family</option>
             <option value="1">Friend</option>
-            <option value="2" selected>Others</option>
+            <option value="2">Others</option>
+
         </select>
+
     </div>
-    <button class="btn btn-default " ng-click="addNewAddress()">Submit</button>
+    <button class="btn btn-default " ng-click="editSingleAddress()">Change</button>
 
     <div class="container">
         <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + 'warning'" close="closeAlert($index)" class="alert col-xs-4 col-xs-offset-4">

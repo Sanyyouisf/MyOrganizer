@@ -30,7 +30,25 @@ namespace MyOrganizer.Controllers
         [ResponseType(typeof(AddressBooks))]
         public IHttpActionResult GetAddressBooks(int id)
         {
-            AddressBooks addressBooks = db.AddressBooks.Find(id);
+            var addressBooks = db.AddressBooks
+                .Where(book => book.Id == id)
+                .Select(book => new
+                {
+                    Id = book.Id,
+                    FirstName = book.FirstName,
+                    LastName = book.LastName,
+                    Tel = book.Tel,
+                    Email = book.Email,
+                    Street = book.Street,
+                    City = book.City,
+                    State = book.City,
+                    Zipcode=book.Zipcode,
+                    User= book.User,
+                    RelationShip = book.RelationShip.ToString()
+                })
+                .First();
+            //AddressBooks addressBooks = db.AddressBooks.Find(id);
+
             if (addressBooks == null)
             {
                 return NotFound();
@@ -57,6 +75,8 @@ namespace MyOrganizer.Controllers
             {
                 return BadRequest();
             }
+
+            addressBooks.User = db.Users.Find(User.Identity.GetUserId());
 
             db.Entry(addressBooks).State = EntityState.Modified;
 

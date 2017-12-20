@@ -264,9 +264,14 @@
     <Compile Include="Migrations\201712132327471_changeFistNameToFirstName.Designer.cs">
       <DependentUpon>201712132327471_changeFistNameToFirstName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712200137337_AddCreateTaskModel.cs" />
+    <Compile Include="Migrations\201712200137337_AddCreateTaskModel.Designer.cs">
+      <DependentUpon>201712200137337_AddCreateTaskModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CreateTask.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -276,7 +281,9 @@
   <ItemGroup>
     <Content Include="App\app.js" />
     <Content Include="App\appConfig.js" />
+    <Content Include="App\Controllers\addNewTaskController.js" />
     <Content Include="App\Controllers\addressBookController.js" />
+    <Content Include="App\Controllers\editAddressBookController.js" />
     <Content Include="App\Controllers\homeController.js" />
     <Content Include="App\Controllers\loginController.js" />
     <Content Include="App\Controllers\meetingController.js" />
@@ -284,10 +291,12 @@
     <Content Include="App\Controllers\taskController.js" />
     <Content Include="App\Controllers\testController.js" />
     <Content Include="App\Views\addressBook.html" />
+    <Content Include="App\Views\editAddress.html" />
     <Content Include="App\Views\home.html" />
     <Content Include="App\Views\login.html" />
     <Content Include="App\Views\meeting.html" />
     <Content Include="App\Views\newAddress.html" />
+    <Content Include="App\Views\newTask.html" />
     <Content Include="App\Views\singleAddress.html" />
     <Content Include="App\Views\task.html" />
     <Content Include="App\Views\test.html" />
@@ -390,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712132327471_changeFistNameToFirstName.resx">
       <DependentUpon>201712132327471_changeFistNameToFirstName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712200137337_AddCreateTaskModel.resx">
+      <DependentUpon>201712200137337_AddCreateTaskModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

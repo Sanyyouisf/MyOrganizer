@@ -1,0 +1,56 @@
+﻿
+
+<h3>New Task</h3>
+<div class="form-group">
+    <div class="form-group">
+        <input type="text" class="form-control " placeholder="Task Name" ng-model="newTask.TaskName" />
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control " placeholder="TaskDate" ng-model="newTask.TaskDate" />
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control " placeholder="Description" ng-model="newTask.Description" />
+    </div>
+    <label>Repeate</label>
+    <div class="form-group">
+        <input type="checkbox" class="checkbox "  ng-click="repeateTask != repeateTask"/>
+    </div>
+
+    <div class =" repeateTask" ng-hide="repeateTask">
+        <label>Repeate every </label>
+        <div class="form-group">
+            <select ng-model="newTask.Interval">
+                <option>ChooseOne</option>
+                <option value="0">None</option>
+                <option value="1">Daily</option>
+                <option value="2">Weekly</option>
+                <option value="3">Monthly</option>
+                <option value="4">Yearly</option>
+            </select>
+        </div>
+    </div>
+
+    <div class=" repeateTask" ng-hide="repeateTask">
+        <label>Repeating Period </label>
+        <div class="form-group">
+            <select ng-model="newTask.Period">
+                <option>ChooseOne</option>
+                <option value="0">None</option>
+                <option value="1">Week</option>
+                <option value="2">Month</option>
+                <option value="3">SixMonthes</option>
+                <option value="4">OneYear</option>
+                <option value="5">TwoYears</option>
+                <option value="6">FiveYears</option>
+            </select>
+        </div>
+    </div>
+
+    <button class="btn btn-default " ng-click="addNewTask()">Submit</button>
+
+    <div class="container">
+        <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + 'warning'" close="closeAlert($index)" class="alert col-xs-4 col-xs-offset-4">
+            {{alert.msg}}
+        </div>
+    </div>
+</div>

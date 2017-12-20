@@ -10,6 +10,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using MyOrganizer.DataModels;
 using MyOrganizer.Models;
+using Microsoft.AspNet.Identity;
 
 namespace MyOrganizer.Controllers
 {
@@ -71,20 +72,71 @@ namespace MyOrganizer.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Tasks
+//-------Post a task-------------------------------------------------------------------
+        // POST: api/Tasks/new
         [ResponseType(typeof(Tasks))]
-        public IHttpActionResult PostTasks(Tasks tasks)
+        public IHttpActionResult PostTasks(CreateTask task)
         {
+            //throw new NotImplementedException();
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            task.User = db.Users.Find(User.Identity.GetUserId());
+            //incase there is no repeate.
+            if (task.Interval == RepeatInterval.None)
+            {
+                var tasks = new Tasks
+                {
+                    TaskName = task.TaskName,
+                    TaskDate = task.TaskDate,
+                    Done = task.Done,
+                    Description = task.Description,
+                    User = task.User
+                };
+                db.Tasks.Add(tasks);
+                db.SaveChanges();
+                return CreatedAtRoute("DefaultApi", new { id = tasks.Id }, tasks);
+            }
 
-            db.Tasks.Add(tasks);
-            db.SaveChanges();
+            //incase you repeate daily----------
+            if (task.Interval == RepeatInterval.Daily)
+            {
+                //var numberOfTasks = ;
+                //for a week
+                if (task.Period == RepeatPeriod.Week)
+                {
+                    var numberOfTasks = 7;
+                     for ( var i=0; i< numberOfTasks; i++)
+                          {
+                            var today = task.TaskDate.AddDays(i);
+                            var tasks = new Tasks
+                                {
+                                    TaskName = task.TaskName,
+                                    TaskDate = today,
+                                    Done = task.Done,
+                                    Description = task.Description,
+                                    User = task.User
 
-            return CreatedAtRoute("DefaultApi", new { id = tasks.Id }, tasks);
+                            };
+                            db.Tasks.Add(tasks);
+                         }
+                    
+                    db.SaveChanges();
+                    return Ok();
+                }
+                //else if (task.Period == RepeatPeriod.Week)
+                //{
+
+                //}
+           
+            }
+
+
+            return Ok();
+
         }
+        //----------------------------------------------------------------------------------------------
 
         // DELETE: api/Tasks/5
         [ResponseType(typeof(Tasks))]
