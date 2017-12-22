@@ -288,6 +288,7 @@
     <Content Include="App\Controllers\loginController.js" />
     <Content Include="App\Controllers\meetingController.js" />
     <Content Include="App\Controllers\singleAddressBookController.js" />
+    <Content Include="App\Controllers\singleTaskController.js" />
     <Content Include="App\Controllers\taskController.js" />
     <Content Include="App\Controllers\testController.js" />
     <Content Include="App\Views\addressBook.html" />
@@ -298,6 +299,7 @@
     <Content Include="App\Views\newAddress.html" />
     <Content Include="App\Views\newTask.html" />
     <Content Include="App\Views\singleAddress.html" />
+    <Content Include="App\Views\singleTask.html" />
     <Content Include="App\Views\task.html" />
     <Content Include="App\Views\test.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />

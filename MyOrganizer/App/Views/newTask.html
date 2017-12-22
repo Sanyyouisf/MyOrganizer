@@ -1,4 +1,18 @@
-﻿
+﻿<div class="navbar navbar-inverse navbar-fixed-top NewAddressNavBar" ng-hide="AddressListNavBar">
+    <div class="container">
+        <div class="navbar-collapse collapse ">
+            <ul class="nav navbar-nav navbar-left" ng-if='isLoggedIn()'>
+                <li><a href=""> {{UserName}}'s Tasks</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ng-if='isLoggedIn()' ng-href="#!/task">Task</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook">Address List</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/meeting">Meeting</a></li>
+                <li><a ng-if='isLoggedIn()' ng-click='Logout()' href=" ">Logout </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 <h3>New Task</h3>
 <div class="form-group">
@@ -13,14 +27,13 @@
     </div>
     <label>Repeate</label>
     <div class="form-group">
-        <input type="checkbox" class="checkbox "  ng-click="repeateTask != repeateTask"/>
+        <input type="checkbox" class="checkbox "   ng-click="repeateTask = !repeateTask"/>
     </div>
 
-    <div class =" repeateTask" ng-hide="repeateTask">
+    <div class ="repeateTask" ng-show="repeateTask">
         <label>Repeate every </label>
         <div class="form-group">
             <select ng-model="newTask.Interval">
-                <option>ChooseOne</option>
                 <option value="0">None</option>
                 <option value="1">Daily</option>
                 <option value="2">Weekly</option>
@@ -28,13 +41,9 @@
                 <option value="4">Yearly</option>
             </select>
         </div>
-    </div>
-
-    <div class=" repeateTask" ng-hide="repeateTask">
         <label>Repeating Period </label>
         <div class="form-group">
             <select ng-model="newTask.Period">
-                <option>ChooseOne</option>
                 <option value="0">None</option>
                 <option value="1">Week</option>
                 <option value="2">Month</option>

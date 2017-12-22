@@ -1,7 +1,18 @@
-﻿app.controller("addNewTaskController", ["$scope", "$http", "$rootScope", function ($scope, $http, $rootScope) {
+﻿app.controller("addNewTaskController", ["$scope", "$http", "$rootScope", "$location", function ($scope, $http, $rootScope, $location) {
+
+    $scope.alerts = [];
+
+    $scope.addAlert = function () {
+        $scope.alerts.push({ msg: 'Another alert!' });
+        console.log("inside addAlert");
+    };
+
+    $scope.closeAlert = function (index) {
+        $scope.alerts.splice(index, 1);
+        console.log("inside closeAlert");
+    };
 
     $scope.newTask = {};
-    /*Scope*/
 
     $scope.addNewTask = () => {
         $http.post("/api/Tasks/new", JSON.stringify(
@@ -16,9 +27,7 @@
             }))
             .then((result) => {
                 console.log("result in addNewTask :", result.data);
-                $scope.alerts = [];
-                //$location.path("/addressBook");
-
+                $location.path("/task")
             })
             .catch((error) => {
                 console.log("error in addNewTask:", error.data.Message);

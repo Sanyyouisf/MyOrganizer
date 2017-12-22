@@ -1,7 +1,38 @@
-﻿<div>
-    <h1> inside task page</h1>
-    <ul>
-        <li ng-repeat="item in taskItems">{{item}}</li>
-    </ul>
-
+﻿<div class="navbar navbar-inverse navbar-fixed-top AddressListNavBar" ng-hide="NewAddressNavBar">
+    <div class="container">
+        <div class="navbar-collapse collapse ">
+            <ul class="nav navbar-nav navbar-left" ng-if='isLoggedIn()'>
+                <li><a href=""> {{UserName}}'s Tasks List</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ng-if='isLoggedIn()' ng-href="#!/task/new">New Task</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook">Address Book</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/meeting">Meeting</a></li>
+                <li><a ng-if='isLoggedIn()' ng-click='Logout()' href=" ">Logout </a></li>
+            </ul>
+        </div>
+    </div>
 </div>
+
+
+<div class="AddressList" >
+    <h1>Address List</h1>
+    <div class="searchText ">
+        <input type="text" class="input-lg" placeholder="Search For ..." ng-model="searchText">
+    </div>
+    <div ng-repeat="task in tasksList | filter: searchText">
+        <!--<a href="">-->
+            <div class="panel panel-default panel-body">
+                <div class="col-xs-8" >
+                    <a ng-href="#!/task/{{task.Id}}">
+                        <div class="col-xs-4">{{task.TaskName}} &nbsp; {{task.TaskDate}}</div>
+                        <div class="col-xs-2"> {{task.Description}} </div>
+                     </a>
+                </div>
+            </div>
+        <!--</a>-->
+    </div>
+</div>
+
+
+

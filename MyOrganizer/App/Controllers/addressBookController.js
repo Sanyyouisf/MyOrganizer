@@ -3,7 +3,9 @@
     $scope.addressBookList = [];
     $scope.singleaddress = {};
     $scope.alerts = [];
-    $scope.newAddress = { RelationShip:2};
+    //$scope.newAddress = { RelationShip: 2 };
+    $scope.newAddress = {};
+
 
 //-----------------------------------------------------------------------
     //alerts
@@ -59,8 +61,7 @@
             .then((result) => {
                 console.log("result in addNewAddress :", result.data);
                 $scope.alerts = [];
-                $location.path("/addressBook");
-              
+                $location.path("/addressBook");           
             })
             .catch((error) => {
                 console.log("error in addNewAddress:", error.data.Message);

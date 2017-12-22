@@ -18,12 +18,14 @@ namespace MyOrganizer.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+//------------------to get all the tasks list------------------------------------------------------
         // GET: api/Tasks
         public IQueryable<Tasks> GetTasks()
         {
             return db.Tasks;
         }
 
+//-------------------to get single task card---------------------------------------------------------
         // GET: api/Tasks/5
         [ResponseType(typeof(Tasks))]
         public IHttpActionResult GetTasks(int id)
@@ -36,6 +38,7 @@ namespace MyOrganizer.Controllers
 
             return Ok(tasks);
         }
+//--------------------------------------------------------------------------------------------------
 
         // PUT: api/Tasks/5
         [ResponseType(typeof(void))]

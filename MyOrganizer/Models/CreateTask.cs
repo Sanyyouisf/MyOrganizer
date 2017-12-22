@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
@@ -30,6 +31,7 @@ namespace MyOrganizer.Models
 
     }
 
+    [DefaultValue(None)]
     public enum RepeatInterval
     {
         None,
@@ -39,6 +41,7 @@ namespace MyOrganizer.Models
         Yearly
     }
 
+    [DefaultValue(None)]
     public enum RepeatPeriod
     {
         None,

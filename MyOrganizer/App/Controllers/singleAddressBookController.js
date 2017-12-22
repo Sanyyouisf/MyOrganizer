@@ -19,7 +19,7 @@
     //console.log("singleAddress.Id :", $scope.address.Id);
 //---------------------------------------------------------------------------------
     //to get the address list 
-    //$Scope.getsingleAddress = (Id) => {
+    //getsingleAddress = (Id) => {
         $http.get(`/api/AddressBooks/${Id}`)
             .then((resultSingleAddress) => {
                 $scope.singleAddress = resultSingleAddress.data;
@@ -34,7 +34,7 @@
             });
     //};
 
-    //getsingleAddress();
+    //$scope.getsingleAddress(Id);
 
 
 //------------------------------------------------------------------
