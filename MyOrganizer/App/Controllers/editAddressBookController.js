@@ -16,13 +16,16 @@
 
     var Id = $routeParams.Id;
 
+    console.log("the Id before reset it ", Id);
+
     $http.get(`/api/AddressBooks/${Id}`)
         .then((resultSingleAddress) => {
             $scope.singleAddress = resultSingleAddress.data;
             //result.data.Id = Id;
             //resolve($scope.singleaddress);
             console.log("you request this address:", $scope.singleAddress);
-
+            //Id = "";
+            console.log("the Id after reset it ",Id);
         })
         .catch((error) => {
             console.log("error in getSingleAddress:", error);
@@ -45,13 +48,15 @@
             State: $scope.singleAddress.State,
             Zipcode: $scope.singleAddress.Zipcode,
             RelationShip: $scope.singleAddress.RelationShip,
-            Id: Id
+            Id: $scope.singleAddress.Id
         }))
             .then((result) => {
                 console.log("result in editSingleAddress:", result);
                 //$scope.getsingleAddress();
                 $location.path("/addressBook");
                 $scope.alerts = [];
+                //$scope.singleAddress = {};
+ 
             })
             .catch((error) => {
                 console.log("error in editSingleAddress:", error);

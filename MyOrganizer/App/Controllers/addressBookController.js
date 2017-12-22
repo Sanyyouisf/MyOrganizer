@@ -24,6 +24,7 @@
             .then((result) => {
                 $scope.addressBookList = result.data;
                 console.log(" result.data getAddressBookList :", $scope.addressBookList);
+                console.log("inside get address list ");
             })
             .catch((error) => {
                 console.log("error in get AddressList:", error);
@@ -35,9 +36,9 @@
 //-----------------------------------------------------------------------
     //get one address
     $scope.getsingleAddress = (Id) => {
-        $location.path(`/addressBook/${Id}`);
-        //getSingleAddress(Id);
-        console.log("the Id", Id);    
+        $location.path(`/addressBook/${Id}`); 
+        console.log("inside get single address");
+        console.log("the Id :", Id);    
     };
 //-----------------------------------------------------------------------
     //adding new Address
@@ -53,7 +54,7 @@
                 State: $scope.newAddress.State,
                 Zipcode: $scope.newAddress.Zipcode,
                 RelationShip: $scope.newAddress.RelationShip,
-                Id: Id
+                Id: $scope.newAddress.Id
             }))
             .then((result) => {
                 console.log("result in addNewAddress :", result.data);

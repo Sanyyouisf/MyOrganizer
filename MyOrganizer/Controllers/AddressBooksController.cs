@@ -46,7 +46,7 @@ namespace MyOrganizer.Controllers
                     User= book.User,
                     RelationShip = book.RelationShip.ToString()
                 })
-                .First();
+                .FirstOrDefault();
             //AddressBooks addressBooks = db.AddressBooks.Find(id);
 
             if (addressBooks == null)

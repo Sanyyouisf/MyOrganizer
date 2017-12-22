@@ -1,9 +1,25 @@
-﻿<h1>single address page</h1>
+﻿<div class="navbar navbar-inverse navbar-fixed-top NewAddressNavBar" ng-hide="AddressListNavBar">
+    <div class="container">
+        <div class="navbar-collapse collapse ">
+            <ul class="nav navbar-nav navbar-left" ng-if='isLoggedIn()'>
+                <li><a href=""> {{UserName}}'s Address Book</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook">Address List</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook/new">New Address</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/task">Task</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/meeting">Meeting</a></li>
+                <li><a ng-if='isLoggedIn()' ng-click='Logout()' href=" ">Logout </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<h1>single address page</h1>
 <div class="panel panel-default panel-body">
    <!--<div class="panel-body">-->
         <div class="col-xs-12" >
             <div class="col-xs-3"> {{singleAddress.FirstName}} &nbsp; {{singleAddress.LastName}}</div>
-            <!--<div class="col-xs-1"> {{singleAddress.LastName}}</div>-->
             <div class="col-xs-3"> {{singleAddress.Tel}} </div>
             <div class="col-xs-4"> {{singleAddress.Email}}</div>
             <div class="col-xs-6"> {{singleAddress.Street}}  &nbsp; 
@@ -16,13 +32,13 @@
 
          <!--</div>-->
      </div>
-    <div class="col-xs-2 ">
+    <div class="col-xs-4 ">
         <!--<a ng-href="#!/addressbooks/edit/{{item.id}}">-->
         <button class="btn btn-danger fa fa-pencil-square-o" ng-click="editSingleAddress(singleAddress.Id)"></button>
         <!--</a>-->
     </div>
 
-    <div class="col-xs-2 ">
+    <div class="col-xs-4 ">
         <!--<a ng-href="#!/addressBooks/list">-->
         <button class="btn btn-danger fa fa-trash-o" ng-click="deleteSingleAddress(singleAddress.Id)"></button>
         <!--</a>-->

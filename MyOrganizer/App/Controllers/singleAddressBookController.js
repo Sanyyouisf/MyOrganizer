@@ -1,5 +1,6 @@
 ﻿app.controller("singleAddressBookController", ["$scope", "$http", "$routeParams", "$rootScope", "$location", function ($scope,$http,$routeParams, $rootScope, $location) {
    // console.log("$routeParams.Id", $routeParams.singleAddressId);
+    $scope.singleAddress = {};
     $scope.editedAddress = {};
     $scope.alerts = [];
 
@@ -18,10 +19,11 @@
     //console.log("singleAddress.Id :", $scope.address.Id);
 //---------------------------------------------------------------------------------
     //to get the address list 
-    //$rootscope.getsingleAddress = (Id) => {
+    //$Scope.getsingleAddress = (Id) => {
         $http.get(`/api/AddressBooks/${Id}`)
             .then((resultSingleAddress) => {
                 $scope.singleAddress = resultSingleAddress.data;
+                console.log("inside get single address function");
                 //result.data.Id = Id;
                 //resolve($scope.singleaddress);
                 console.log("you request this address:", $scope.singleAddress);
@@ -36,7 +38,8 @@
 
 
 //------------------------------------------------------------------
-        $scope.editSingleAddress = (Id)=> {
+        $scope.editSingleAddress = (Id) => {
+            console.log("insude editSingleAddress");
             $location.path(`/addressBook/edit/${Id}`);
             console.log("the id to edit :", Id);
         };

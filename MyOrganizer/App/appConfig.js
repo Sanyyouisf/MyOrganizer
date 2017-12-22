@@ -1,10 +1,5 @@
 ﻿app.config(["$routeProvider", function ($routeProvider) {
-    $routeProvider
-        .when("/",
-        {
-            templateUrl: "App/Views/home.html",
-            controller: "homeController"
-        })
+    $routeProvider 
         .when("/login",
         {
             templateUrl: "App/Views/login.html",
@@ -50,16 +45,20 @@
             templateUrl: "App/Views/test.html",
             controller: "testController"
         })
+        .when("/",
+        {
+            templateUrl: "App/Views/home.html",
+            controller: "homeController"
+        })
         .otherwise("/login");
 }]);
 
 app.run(["$rootScope", "$http", "$location", function ($rootScope, $http, $location) {
-
-
     //if a user logged in return the token
     $rootScope.isLoggedIn = () => {
         return !!sessionStorage.getItem("token");
         console.log("inside isLoggedIn ");
+        event.preventDefault();
         //console.log("token :", token );
     };
 
