@@ -14,6 +14,19 @@
                 console.log("error in singleTaskController", error)
             })
     //};
+        $scope.deleteSingleTask = () => {
+            console.log("the ID you will delete it is: ", Id );
+            $http.delete(`/api/Tasks/${Id}`)
+                .then((DeletesTask) => {
+                    console.log("resulet in deleteSingleTask :", DeletesTask.data);
+                    console.log("you successfuly deleted the task :", DeletesTask.data.TaskName);
+                    $location.path("/task");
+                })
+                .catch((error) => {
+                    console.log("error in deleteSingleTask", error)
+                })
+
+        };
 
 }
 ]);

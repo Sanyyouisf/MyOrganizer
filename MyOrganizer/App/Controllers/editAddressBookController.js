@@ -56,7 +56,6 @@
                 $location.path("/addressBook");
                 $scope.alerts = [];
                 //$scope.singleAddress = {};
- 
             })
             .catch((error) => {
                 console.log("error in editSingleAddress:", error);

@@ -53,6 +53,7 @@ namespace MyOrganizer.Controllers
             {
                 return BadRequest();
             }
+            tasks.User = db.Users.Find(User.Identity.GetUserId());
 
             db.Entry(tasks).State = EntityState.Modified;
 
