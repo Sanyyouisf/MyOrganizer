@@ -38,8 +38,19 @@ namespace MyOrganizer.Controllers
 
             return Ok(tasks);
         }
-//--------------------------------------------------------------------------------------------------
 
+        //public IHttpActionResult GetTasks(int id)
+        //{
+        //    Tasks tasks = db.Tasks.Find(id);
+        //    if (tasks == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return Ok(tasks);
+        //}
+
+        //---------------to adit a task ------------------------------------------------------------------------------
         // PUT: api/Tasks/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutTasks(int id, Tasks tasks)
@@ -59,6 +70,14 @@ namespace MyOrganizer.Controllers
 
             try
             {
+                var task = new Tasks
+                {
+                    TaskName = tasks.TaskName,
+                    TaskDate = tasks.TaskDate,
+                    Description = tasks.Description,
+                    User = tasks.User,
+                    Id = tasks.Id
+                };
                 db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
@@ -76,7 +95,54 @@ namespace MyOrganizer.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-//-------Post a task-------------------------------------------------------------------
+        //[ResponseType(typeof(void))]
+        //public IHttpActionResult PutTasks(int id, Tasks task)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+        //    task.User = db.Users.Find(User.Identity.GetUserId());
+
+        //    //if (id != task.Id)
+        //    //{
+        //    //    return BadRequest();
+        //    //}
+
+            
+        //    //db.Entry(task).State = EntityState.Modified;
+
+        //    try
+        //    {
+        //        var tasks = new Tasks
+        //        {
+        //            TaskName = task.TaskName,
+        //            TaskDate = task.TaskDate,
+        //            Done = task.Done,
+        //            Description = task.Description,
+        //            Id = id,
+        //            User = task.User
+        //        };
+        //        db.Tasks.Add(tasks);
+        //        db.SaveChanges();
+        //        return CreatedAtRoute("DefaultApi", new { id = tasks.Id }, tasks);
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!TasksExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
+
+        //    return Ok();
+        //}
+
+//--------------------Post a task--------------------------------------------------------------------------------
         // POST: api/Tasks/new
         [ResponseType(typeof(Tasks))]
         public IHttpActionResult PostTasks(CreateTask task)
@@ -140,8 +206,7 @@ namespace MyOrganizer.Controllers
             return Ok();
 
         }
-        //----------------------------------------------------------------------------------------------
-
+//------------------------to delete a tesk----------------------------------------------------------------------
         // DELETE: api/Tasks/5
         [ResponseType(typeof(Tasks))]
         public IHttpActionResult DeleteTasks(int id)
@@ -157,7 +222,7 @@ namespace MyOrganizer.Controllers
 
             return Ok(tasks);
         }
-
+//--------------------------------------------------------------------------------------------------------------
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -25,7 +25,7 @@
             //resolve($scope.singleaddress);
             console.log("you request this address:", $scope.singleAddress);
             //Id = "";
-            console.log("the Id after reset it ",Id);
+            //console.log("the Id after reset it ",Id);
         })
         .catch((error) => {
             console.log("error in getSingleAddress:", error);

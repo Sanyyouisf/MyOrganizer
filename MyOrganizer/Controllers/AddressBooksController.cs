@@ -98,7 +98,7 @@ namespace MyOrganizer.Controllers
 
             return StatusCode(HttpStatusCode.NoContent);
         }
-
+//----------------------to edit the address---------------------------------------------------------
         // POST: api/AddressBooks/new
         [ResponseType(typeof(AddressBooks))]
         public IHttpActionResult PostAddressBooks(AddressBooks addressBooks)
@@ -114,7 +114,7 @@ namespace MyOrganizer.Controllers
 
             return CreatedAtRoute("DefaultApi", new { id = addressBooks.Id }, addressBooks);
         }
-
+//-----------------------to delete address-----------------------------------------------------------
         // DELETE: api/AddressBooks/5
         [ResponseType(typeof(AddressBooks))]
         public IHttpActionResult DeleteAddressBooks(int id)
@@ -130,7 +130,7 @@ namespace MyOrganizer.Controllers
 
             return Ok(addressBooks);
         }
-
+//------------------------------------------------------------------------------------------------------
         protected override void Dispose(bool disposing)
         {
             if (disposing)

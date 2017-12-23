@@ -1,4 +1,6 @@
 ﻿app.controller("taskController", ["$scope", "$http", "$rootScope", function ($scope, $http, $rootScope) {
+
+ //-------to get the task list ------------------------------------------------------------------------------------
     $http.get("/api/Tasks")
         .then((result) => {
             $scope.tasksList = result.data;
@@ -8,6 +10,6 @@
             Console.log("error in task controller :", error);
         });
 
-    $scope.getSingleTask
+    //$scope.getSingleTask
 }
 ]);

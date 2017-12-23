@@ -284,6 +284,7 @@
     <Content Include="App\Controllers\addNewTaskController.js" />
     <Content Include="App\Controllers\addressBookController.js" />
     <Content Include="App\Controllers\editAddressBookController.js" />
+    <Content Include="App\Controllers\editTaskController.js" />
     <Content Include="App\Controllers\homeController.js" />
     <Content Include="App\Controllers\loginController.js" />
     <Content Include="App\Controllers\meetingController.js" />
@@ -293,6 +294,7 @@
     <Content Include="App\Controllers\testController.js" />
     <Content Include="App\Views\addressBook.html" />
     <Content Include="App\Views\editAddress.html" />
+    <Content Include="App\Views\editTask.html" />
     <Content Include="App\Views\home.html" />
     <Content Include="App\Views\login.html" />
     <Content Include="App\Views\meeting.html" />

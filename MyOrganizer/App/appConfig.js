@@ -45,6 +45,11 @@
             templateUrl: "App/Views/singleTask.html",
             controller:"singleTaskController"
         })
+        .when("/task/edit/:Id",
+        {
+            templateUrl: "App/Views/editTask.html",
+            controller:"editTaskController"
+        })
         .when("/test",
         {
             templateUrl: "App/Views/test.html",
