@@ -15,6 +15,7 @@
     $scope.newTask = {};
 
     $scope.addNewTask = () => {
+        $scope.alerts = [];
         $http.post("/api/Tasks/new", JSON.stringify(
             {
                 TaskName: $scope.newTask.TaskName,

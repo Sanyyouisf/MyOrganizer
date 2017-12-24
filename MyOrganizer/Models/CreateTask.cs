@@ -38,7 +38,6 @@ namespace MyOrganizer.Models
         Daily,
         Weekly,
         Monthly,
-        Yearly
     }
 
     [DefaultValue(None)]
@@ -47,8 +46,7 @@ namespace MyOrganizer.Models
         None,
         Week,
         Month,
-        OneYear,
-        TwoYears,
-        fiveYears
+        sixMonthes,
+        OneYear
     }
 }
