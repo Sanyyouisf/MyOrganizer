@@ -18,14 +18,21 @@ namespace MyOrganizer.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-//------------------to get all the tasks list------------------------------------------------------
+        //------------------to get all the tasks list------------------------------------------------------
+        // GET: api/Tasks
+        //public IQueryable<Tasks> GetTasks()
+        //{
+        //    return db.Tasks;
+        //}
+        //-----------------to get the task list still not done----------------------------------------------
+
         // GET: api/Tasks
         public IQueryable<Tasks> GetTasks()
         {
-            return db.Tasks;
-        }
 
-//-------------------to get single task card---------------------------------------------------------
+            return db.Tasks.Where(c => c.Done.ToString().ToLower() == "false");
+        }
+//-------to get single task card---------------------------------------------------------
         // GET: api/Tasks/5
         [ResponseType(typeof(Tasks))]
         public IHttpActionResult GetTasks(int id)
@@ -39,18 +46,62 @@ namespace MyOrganizer.Controllers
             return Ok(tasks);
         }
 
-        //public IHttpActionResult GetTasks(int id)
-        //{
-        //    Tasks tasks = db.Tasks.Find(id);
-        //    if (tasks == null)
-        //    {
-        //        return NotFound();
-        //    }
+//-------to mark the task as Done-----------------------------------------
+        // PUT : api/Tasks/Done/3
+        [HttpPut,Route("api/Tasks/Done/{id}")]
+        [ResponseType(typeof(void))]
+        public IHttpActionResult MarkTaskAsDone (int id,Tasks tasks)
+        {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            if(id !=tasks.Id)
+            {
+                return BadRequest();
+            }
+            tasks.User = db.Users.Find(User.Identity.GetUserId());
+            db.Entry(tasks).State = EntityState.Modified;
 
-        //    return Ok(tasks);
-        //}
+            try
+            {
+                if (tasks.Done == true)
+                {
+                    var Donetask = new Tasks
+                    {
+                        TaskName = tasks.TaskName,
+                        TaskDate = tasks.TaskDate,
+                        Done = false
+                    };
+                }
+                else
+                {
+                    var Donetask = new Tasks
+                    {
+                        TaskName = tasks.TaskName,
+                        TaskDate = tasks.TaskDate,
+                        Done = true
+                    };
+                }
 
-        //---------------to adit a task ------------------------------------------------------------------------------
+                db.SaveChanges();
+
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!TasksExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+//------to adit a task ------------------------------------------------------------------------------
         // PUT: api/Tasks/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutTasks(int id, Tasks tasks)
@@ -95,54 +146,7 @@ namespace MyOrganizer.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        //[ResponseType(typeof(void))]
-        //public IHttpActionResult PutTasks(int id, Tasks task)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-        //    task.User = db.Users.Find(User.Identity.GetUserId());
-
-        //    //if (id != task.Id)
-        //    //{
-        //    //    return BadRequest();
-        //    //}
-
-            
-        //    //db.Entry(task).State = EntityState.Modified;
-
-        //    try
-        //    {
-        //        var tasks = new Tasks
-        //        {
-        //            TaskName = task.TaskName,
-        //            TaskDate = task.TaskDate,
-        //            Done = task.Done,
-        //            Description = task.Description,
-        //            Id = id,
-        //            User = task.User
-        //        };
-        //        db.Tasks.Add(tasks);
-        //        db.SaveChanges();
-        //        return CreatedAtRoute("DefaultApi", new { id = tasks.Id }, tasks);
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!TasksExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
-
-        //    return Ok();
-        //}
-
-//--------------------Post a task--------------------------------------------------------------------------------
+//-------Post a task--------------------------------------------------------------------------------
         // POST: api/Tasks/new
         [ResponseType(typeof(Tasks))]
         public IHttpActionResult PostTasks(CreateTask task)

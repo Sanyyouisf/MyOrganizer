@@ -29,6 +29,11 @@
                         <div class="col-xs-2"> {{task.Description}} </div>
                      </a>
                 </div>
+                
+                <div class=" col-xs-2">
+                    <label for="taskDone">Done</label>
+                    <input  type="checkbox"  Id="taskDone " class="checkbox" ng-click="taskDone(task.Id)">
+                </div>
             </div>
         <!--</a>-->
     </div>

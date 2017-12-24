@@ -36,6 +36,25 @@
             $location.path(`/task/edit/${Id}`);
         };
 //-------------------------------------------------
+        var Id = $routeParams.Id;
+        $scope.taskDone = (Id) => {
+            console.log("inside the Id to be done :", Id);
+            console.log("inside single task");
+            $http.put(`/api/Tasks/Done/${Id}` ,JSON.stringify
+                ({
+                    TaskName: $scope.singleTask.TaskName,
+                    TaskDate: $scope.singleTask.TaskDate,
+                    Done: true,
+                    Id :Id
+                }))
+                .then((updatedTask) => {
+                    console.log("updatedTask data:", updatedTask);
+                    $location.path("/task");
+                })
+                .catch((error) => {
+                    console.log("error in task Done :", error);
+                })
+        }
 
 }
 ]);
