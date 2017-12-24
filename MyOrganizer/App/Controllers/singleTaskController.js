@@ -35,11 +35,10 @@
             console.log("the Id you like to edit :", Id)
             $location.path(`/task/edit/${Id}`);
         };
-//-------------------------------------------------
+//---------to mark the task as done ----------------------------------------------------------------------
         var Id = $routeParams.Id;
         $scope.taskDone = (Id) => {
             console.log("inside the Id to be done :", Id);
-            console.log("inside single task");
             $http.put(`/api/Tasks/Done/${Id}` ,JSON.stringify
                 ({
                     TaskName: $scope.singleTask.TaskName,
@@ -48,7 +47,7 @@
                     Id :Id
                 }))
                 .then((updatedTask) => {
-                    console.log("updatedTask data:", updatedTask);
+                    console.log("updatedTask data:", updatedTask.config.data);
                     $location.path("/task");
                 })
                 .catch((error) => {

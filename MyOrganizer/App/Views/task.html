@@ -21,21 +21,14 @@
         <input type="text" class="input-lg" placeholder="Search For ..." ng-model="searchText">
     </div>
     <div ng-repeat="task in tasksList | filter: searchText">
-        <!--<a href="">-->
-            <div class="panel panel-default panel-body">
-                <div class="col-xs-8" >
-                    <a ng-href="#!/task/{{task.Id}}">
-                        <div class="col-xs-4">{{task.TaskName}} &nbsp; {{task.TaskDate}}</div>
-                        <div class="col-xs-2"> {{task.Description}} </div>
-                     </a>
-                </div>
-                
-                <div class=" col-xs-2">
-                    <label for="taskDone">Done</label>
-                    <input  type="checkbox"  Id="taskDone " class="checkbox" ng-click="taskDone(task.Id)">
-                </div>
+        <div class="panel panel-default panel-body">
+             <div class="col-xs-8" >
+                 <a ng-href="#!/task/{{task.Id}}">
+                     <div class="col-xs-4">{{task.TaskName}} &nbsp; {{task.TaskDate}}</div>
+                     <div class="col-xs-2"> {{task.Description}} </div>
+                 </a>
             </div>
-        <!--</a>-->
+       </div>
     </div>
 </div>
 
