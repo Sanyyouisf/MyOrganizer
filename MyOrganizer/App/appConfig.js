@@ -25,11 +25,6 @@
             templateUrl: "App/Views/editAddress.html",
             controller:"editAddressBookController"
         })
-        .when("/meeting",
-        {
-            templateUrl: "App/Views/meeting.html",
-            controller: "meetingController"
-        })
         .when("/task",
         {
             templateUrl: "App/Views/task.html",
@@ -54,6 +49,26 @@
         {
             templateUrl: "App/Views/test.html",
             controller: "testController"
+        })
+        .when("/meeting",
+        {
+            templateUrl: "App/Views/meeting.html",
+            controller: "meetingController"
+        })
+        .when("/meeting/new",
+        {
+            templateUrl: "App/Views/newMeeting.html",
+            controller: "addNewMeetingController"
+        })
+        .when("/meeting/:Id",
+        {
+            templateUrl: "App/Views/singleMeeting.html",
+            controller: "singleMeetingController"
+        })
+        .when("/meeting/edit/:Id",
+        {
+            templateUrl: "App/Views/editMeeting.html",
+            controller: "editMeetingController"
         })
         .when("/",
         {

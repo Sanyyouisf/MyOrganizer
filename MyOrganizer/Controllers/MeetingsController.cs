@@ -16,7 +16,7 @@ namespace MyOrganizer.Controllers
     public class MeetingsController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
+//------Get all the meeting List ---------------------------------
         // GET: api/Meetings
         public IQueryable<Meetings> GetMeetings()
         {

@@ -1,8 +1,12 @@
 ﻿app.controller("meetingController", ["$scope", "$http", "$rootScope", function ($scope, $http, $rootScope) {
+
+    $scope.meetingList = [];
+    $scope.meeting = {};
+    //-------to get the task list -------------------------------------------------------------------------
     $http.get("/api/Meetings")
-        .then((result) => {
-            $scope.meetingItems = result.data;
-            console.log(" result.data :", result.data);
+        .then((resultMeetingList) => {
+            $scope.meetingList = resultMeetingList.data;
+            console.log(" $scope.meetingList :", $scope.meetingList);
         })
         .catch((error) => {
             Console.log("error in meeting controller :", error);
