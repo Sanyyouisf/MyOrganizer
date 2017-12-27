@@ -5,6 +5,7 @@
                 <li><a href=""> {{UserName}}'s Tasks</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li><a ng-if='isLoggedIn()' ng-href="#!/">Home</a></li>
                 <li><a ng-if='isLoggedIn()' ng-href="#!/task">Tasks List </a></li>
                 <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook">Address Book</a></li>
                 <li><a ng-if='isLoggedIn()' ng-href="#!/meeting">Meeting</a></li>

@@ -18,7 +18,6 @@ namespace MyOrganizer.Controllers
     public class TasksController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        private Func<object, OkResult> repeateTaskForPeriod;
 
         //------------------to get all the tasks list------------------------------------------------------
         // GET: api/Tasks
@@ -26,7 +25,7 @@ namespace MyOrganizer.Controllers
         //{
         //    return db.Tasks;
         //}
-        //-----------------to get the task list still not done----------------------------------------------
+//-----------------to get the task list still not done----------------------------------------------
 
         // GET: api/Tasks
         public IQueryable<Tasks> GetTasks()
@@ -34,6 +33,21 @@ namespace MyOrganizer.Controllers
 
             return db.Tasks.Where(c => c.Done.ToString().ToLower() == "false");
         }
+
+//--------------------------------------------------------------------------------
+    //GET:api/Tasks/ToDoList
+    [HttpGet,Route("api/Tasks/toDoList")]
+    [ResponseType (typeof(Tasks))]
+    public IQueryable<Tasks> GetTasksToDoList ()
+        {
+            return db.Tasks.Where(c => c.Done.ToString().ToLower() == "false"
+                                      && c.TaskDate.Month == DateTime.Today.Month
+                                      && c.TaskDate.Year == DateTime.Today.Year);
+            //return db.Tasks.Where(c => c.Done.ToString().ToLower() == "false"
+            //                      && c.TaskDate.Year == DateTime.Today.Year
+            //                      && c.TaskDate.Month == DateTime.Now.AddMonths(1) )
+        }
+
 //-------to get single task card---------------------------------------------------------
         // GET: api/Tasks/5
         [ResponseType(typeof(Tasks))]

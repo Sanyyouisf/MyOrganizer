@@ -1,16 +1,20 @@
 ﻿app.controller("homeController", ["$scope", "$http","$rootScope", function ($scope, $http, $rootScope) {
     console.log("in homeController");
-    //$http.get("/Api/values")
-    //    .then((result) => {
-    //        console.log("result in homeController:", result);
-    //        $scope.values = result.data;
-    //        console.log("$scope.values in homeController ", $scope.values);
-    //    })
-    //    .catch((error) => {
-    //       // reject(error);
-    //        $scope.error = error.data.error_description;
-    //        console.log("erro error in home controller :", $scope.error);
-    //    });
 
-    //$scope.message = "hi this is homeController "
+    $scope.ListToDo = [];
+    $scope.ToDoList = false;
+
+//------to get the list that not done -----------------------------------------------------
+    $scope.GetListToDo = () => {
+        $http.get("api/Tasks/toDoList")
+            .then((GetListToDoResult) => {
+                $scope.ListToDo = GetListToDoResult.data;
+                console.log("GetListToDoResult data :", $scope.ListToDo);
+                $scope.ToDoList = !$scope.ToDoList;
+            })
+            .catch((error) => {
+                console.log("error in GetListToDo", error);
+            })
+    };
+
 }]);
