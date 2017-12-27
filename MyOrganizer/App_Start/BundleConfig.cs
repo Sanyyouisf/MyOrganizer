@@ -23,6 +23,7 @@ namespace MyOrganizer
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                "~/Scripts/angular.js",
                "~/Scripts/angular-route.js",
+               "~/Scripts/angular-ui/ui-bootstrap.js",
                "~/App/app.js",
                "~/App/appConfig.js").IncludeDirectory("~/App/controllers", "*.js", true));
 
