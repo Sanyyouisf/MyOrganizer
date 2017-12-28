@@ -110,3 +110,5 @@ C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.dll
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.pdb
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.AddCreateTaskModel.resources
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.csprojResolveAssemblyReference.cache
+C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.JsonIgnoreUserInModels.resources
+C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.CreatMeetingModel.resources

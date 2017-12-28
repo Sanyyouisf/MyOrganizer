@@ -7,7 +7,7 @@ using System.Web;
 
 namespace MyOrganizer.Models
 {
-    public class CreatMeeting
+    public class CreateMeeting
     {
         [Required]
         [Display(Name = "Meeting Name")]
@@ -34,8 +34,8 @@ namespace MyOrganizer.Models
     public enum MeetingRepeatInterval
     {
         None,
-        Dailey,
-        weekly,
+        Daily,
+        Weekly,
         Monthly,
     }
 
@@ -43,9 +43,9 @@ namespace MyOrganizer.Models
     public enum MeetingRepeatPeriod
     {
         None,
-        week,
+        Week,
         Month,
-        year,
+        OneYear,
     }
 
 }
