@@ -92,10 +92,10 @@ namespace MyOrganizer.Controllers
 
             return StatusCode(HttpStatusCode.NoContent);
         }
-//--------to edit the meeting-------------------------------------------------------------------
+        //--------to edit the meeting-------------------------------------------------------------------
         // PUT: api/Meetings/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutMeetings(int id, Meetings meetings)
+        public IHttpActionResult PutTasks(int id, Meetings meetings)
         {
             if (!ModelState.IsValid)
             {
@@ -106,11 +106,20 @@ namespace MyOrganizer.Controllers
             {
                 return BadRequest();
             }
+            meetings.User = db.Users.Find(User.Identity.GetUserId());
 
             db.Entry(meetings).State = EntityState.Modified;
 
             try
             {
+                var meeting = new Meetings
+                {
+                    MeetingName = meetings.MeetingName,
+                    MeetingDate = meetings.MeetingDate,
+                    Notes = meetings.Notes,
+                    User = meetings.User,
+                    Id = meetings.Id
+                };
                 db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
@@ -128,7 +137,7 @@ namespace MyOrganizer.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-//------to add a meeting------------------------------------------
+        //------to add a meeting------------------------------------------
         //POST: api/Meetings/new
         [ResponseType(typeof(Meetings))]
         public IHttpActionResult CreateMeeings(CreateMeeting meeting)
