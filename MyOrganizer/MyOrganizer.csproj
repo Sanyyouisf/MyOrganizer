@@ -231,12 +231,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MeetingsController.cs" />
     <Compile Include="Controllers\TasksController.cs" />
-    <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DataModels\AddressBooks.cs" />
     <Compile Include="DataModels\Meetings.cs" />
     <Compile Include="DataModels\Tasks.cs" />
-    <Compile Include="DataModels\Tests.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -276,6 +274,14 @@
     <Compile Include="Migrations\201712280122076_CreatMeetingModel.Designer.cs">
       <DependentUpon>201712280122076_CreatMeetingModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712280237256_MeetingDateTimeTypeChange.cs" />
+    <Compile Include="Migrations\201712280237256_MeetingDateTimeTypeChange.Designer.cs">
+      <DependentUpon>201712280237256_MeetingDateTimeTypeChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712280305008_deleteTestModel.cs" />
+    <Compile Include="Migrations\201712280305008_deleteTestModel.Designer.cs">
+      <DependentUpon>201712280305008_deleteTestModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -303,7 +309,6 @@
     <Content Include="App\Controllers\singleMeetingController.js" />
     <Content Include="App\Controllers\singleTaskController.js" />
     <Content Include="App\Controllers\taskController.js" />
-    <Content Include="App\Controllers\testController.js" />
     <Content Include="App\Views\addressBook.html" />
     <Content Include="App\Views\editAddress.html" />
     <Content Include="App\Views\editMeeting.html" />
@@ -318,7 +323,6 @@
     <Content Include="App\Views\singleMeeting.html" />
     <Content Include="App\Views\singleTask.html" />
     <Content Include="App\Views\task.html" />
-    <Content Include="App\Views\test.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -432,6 +436,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712280122076_CreatMeetingModel.resx">
       <DependentUpon>201712280122076_CreatMeetingModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712280237256_MeetingDateTimeTypeChange.resx">
+      <DependentUpon>201712280237256_MeetingDateTimeTypeChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712280305008_deleteTestModel.resx">
+      <DependentUpon>201712280305008_deleteTestModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

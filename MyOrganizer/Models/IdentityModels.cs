@@ -31,7 +31,6 @@ namespace MyOrganizer.Models
         public DbSet <AddressBooks> AddressBooks { get; set; }
         public DbSet <Meetings> Meetings { get; set; }
         public DbSet <Tasks> Tasks { get; set; }
-        public DbSet <Tests> Tests { get; set; }
 
 
         public ApplicationDbContext()

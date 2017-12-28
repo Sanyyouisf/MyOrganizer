@@ -36,7 +36,19 @@ namespace MyOrganizer.Controllers
 
             return Ok(meetings);
         }
-
+//------for the to do list --------------------------------------------------------------------------
+        //GET:api/Meetings/ToDoList
+        [HttpGet, Route("api/Meetings/toDoList")]
+        [ResponseType(typeof(Meetings))]
+        public IQueryable<Meetings> GetMeetingsToDoList()
+        {
+            return db.Meetings.Where(M => M.Done.ToString().ToLower() == "false"
+                                      && M.MeetingDate.Month == DateTime.Today.Month
+                                      && M.MeetingDate.Year == DateTime.Today.Year);
+            //return db.Tasks.Where(c => c.Done.ToString().ToLower() == "false"
+            //                      && c.TaskDate.Year == DateTime.Today.Year
+            //                      && c.TaskDate.Month == DateTime.Now.AddMonths(1) )
+        }
 //--------to mark the meeting as Done-----------------------------------------------------------
         // PUT : api/Meetings/Done/3
         [HttpPut, Route("api/Meetings/Done/{id}")]
@@ -154,7 +166,7 @@ namespace MyOrganizer.Controllers
                 var meetings = new Meetings
                 {
                     MeetingName = meeting.MeetingName,
-                    MeetingDate = meeting.MeetingDate.ToString(),
+                    MeetingDate = meeting.MeetingDate,
                     Done = meeting.Done,
                     Notes = meeting.Notes,
                     User = meeting.User
@@ -179,7 +191,7 @@ namespace MyOrganizer.Controllers
                     for (var i = 0; i < numberOfMeetings; i++)
                     {
                         var today = meeting.MeetingDate.AddDays(i);
-                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today.ToString(), Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
+                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today, Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
                         db.Meetings.Add(meetings);
                     }
                     db.SaveChanges();
@@ -192,7 +204,7 @@ namespace MyOrganizer.Controllers
                     for (var i = 0; i < numberOfMeetings; i++)
                     {
                         var today = meeting.MeetingDate.AddDays(i);
-                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today.ToString(), Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
+                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today, Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
                         db.Meetings.Add(meetings);
                     }
                     db.SaveChanges();
@@ -205,7 +217,7 @@ namespace MyOrganizer.Controllers
                     for (var i = 0; i < numberOfMeetings; i++)
                     {
                         var today = meeting.MeetingDate.AddDays(i);
-                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today.ToString(), Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
+                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today, Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
                         db.Meetings.Add(meetings);
                     }
                     db.SaveChanges();
@@ -218,7 +230,7 @@ namespace MyOrganizer.Controllers
                     for (var i = 0; i < numberOfMeetings; i++)
                     {
                         var today = meeting.MeetingDate.AddDays(i);
-                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today.ToString(), Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
+                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today, Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
                         db.Meetings.Add(meetings);
                     }
                     db.SaveChanges();
@@ -242,7 +254,7 @@ namespace MyOrganizer.Controllers
                     for (var i = 0; i < numberOfMeetings; i++)
                     {
                         var today = meeting.MeetingDate.AddDays(i);
-                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today.ToString(), Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
+                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today, Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
                         db.Meetings.Add(meetings);
                     }
                     db.SaveChanges();
@@ -255,7 +267,7 @@ namespace MyOrganizer.Controllers
                     for (var i = 0; i < numberOfMeetings; i++)
                     {
                         var today = meeting.MeetingDate.AddDays(i);
-                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today.ToString(), Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
+                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today, Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
                         db.Meetings.Add(meetings);
                     }
                     db.SaveChanges();
@@ -268,7 +280,7 @@ namespace MyOrganizer.Controllers
                     for (var i = 0; i < numberOfMeetings; i++)
                     {
                         var today = meeting.MeetingDate.AddDays(i);
-                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today.ToString(), Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
+                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today, Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
                         db.Meetings.Add(meetings);
                     }
                     db.SaveChanges();
@@ -292,7 +304,7 @@ namespace MyOrganizer.Controllers
                     for (var i = 0; i < numberOfMeetings; i++)
                     {
                         var today = meeting.MeetingDate.AddDays(i);
-                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today.ToString(), Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
+                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today, Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
                         db.Meetings.Add(meetings);
                     }
                     db.SaveChanges();
@@ -305,7 +317,7 @@ namespace MyOrganizer.Controllers
                     for (var i = 0; i < numberOfMeetings; i++)
                     {
                         var today = meeting.MeetingDate.AddDays(i);
-                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today.ToString(), Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
+                        var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today, Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
                         db.Meetings.Add(meetings);
                     }
                     db.SaveChanges();

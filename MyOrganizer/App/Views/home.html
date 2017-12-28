@@ -17,7 +17,7 @@
 
 <h2>hello {{UserName}} this is the Home page</h2>
 
-<div ng-repeat="item in ListToDo" class="ToDoList" ng-show="ToDoList" >
+<div ng-repeat="item in TasksListToDo" class="ToDoList" ng-show="ToDoList" >
     <div class="panel panel-default panel-body ">
         <div class="col-xs-8">
              <div class="col-xs-4">{{item.TaskName}} &nbsp; {{item.TaskDate}}</div>
@@ -25,3 +25,13 @@
         </div>
      </div>
 </div>
+
+<div ng-repeat="item2 in MeetingListToDo" class="ToDoList" ng-show="ToDoList">
+    <div class="panel panel-default panel-body ">
+        <div class="col-xs-8">
+            <div class="col-xs-4">{{item2.MeetingName}} &nbsp; {{item2.MeetingDate}}</div>
+            <div class="col-xs-2"> {{item2.Notes}} </div>
+        </div>
+    </div>
+</div>
+

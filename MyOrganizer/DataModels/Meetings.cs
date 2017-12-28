@@ -20,7 +20,7 @@ namespace MyOrganizer.DataModels
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Meeting Date")]
-        public string MeetingDate { get; set; }
+        public DateTime MeetingDate { get; set; }
 
         public Boolean Done { get; set; } = false ;
 

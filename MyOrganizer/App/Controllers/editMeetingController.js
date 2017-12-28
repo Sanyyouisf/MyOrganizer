@@ -18,25 +18,17 @@
         console.log("inside editSingleMeeting");
         console.log("the Id you selected to edit is:", Id);
         console.log(" $scope.singleMeeting.Id :", $scope.singleMeeting.Id)
-        //$scope.editedAddress.User_Id = $rootScope.UserName.Id,
         $http.put(`/api/Meetings/${Id}`, JSON.stringify
             ({
                 MeetingName: $scope.singleMeeting.MeetingName,
                 MeetingDate: $scope.singleMeeting.MeetingDate,
                 Notes: $scope.singleMeeting.Notes,
-                //Done: $scope.singleTask.Done,
-                //Interval: $scope.singleTask.Interval,
-                //Period: $scope.singleTask.Period,
                 Id: Id
             }))
             .then((editedMeeting) => {
                 console.log("editedMeeting :", editedMeeting);
                 editedMeeting.data.Id = Id;
-                //resolve(resultz.data);
-                //editedTask.data.Id = Id;
                 console.log("editedMeeting after :", editedMeeting);
-                //console.log("the Id you selected to edit is:", editedTask.data.Id);
-                //console.log("the data after addingthe id  ", editedTask.data),
                 $location.path("/meeting");
             })
             .catch((error) => {

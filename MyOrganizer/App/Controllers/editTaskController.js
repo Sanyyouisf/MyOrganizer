@@ -18,25 +18,17 @@
         console.log("inside editSingleTask");
         console.log("the Id you selected to edit is:", Id);
         console.log(" $scope.singleTask.Id :", $scope.singleTask.Id)
-        //$scope.editedAddress.User_Id = $rootScope.UserName.Id,
         $http.put(`/api/Tasks/${Id}`, JSON.stringify
         ({
             TaskName :$scope.singleTask.TaskName,
             TaskDate :$scope.singleTask.TaskDate,
             Description : $scope.singleTask.Description,
-            //Done: $scope.singleTask.Done,
-            //Interval: $scope.singleTask.Interval,
-            //Period: $scope.singleTask.Period,
             Id: Id
         }))
             .then((editedTask) => {
                 console.log("editedTask :", editedTask);
                 editedTask.data.Id = Id;
-                //resolve(resultz.data);
-                //editedTask.data.Id = Id;
                 console.log("editedTask after :", editedTask);
-                //console.log("the Id you selected to edit is:", editedTask.data.Id);
-                //console.log("the data after addingthe id  ", editedTask.data),
                 $location.path("/task");
             })
             .catch((error) => {
