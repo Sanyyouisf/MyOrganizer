@@ -15,14 +15,14 @@
             console.log("error in singleMeetingController", error)
         })
     //};
-    //-------------to delete a task--------------------------------------------------------------------------------------
+    //-------------to delete a meeting--------------------------------------------------------------------------------------
     $scope.deleteSingleMeeting = () => {
         console.log("the ID you will delete it is: ", Id);
-        $http.delete(`/api/Meeting/${Id}`)
+        $http.delete(`/api/Meetings/${Id}`)
             .then((ResultDeletedMeeting) => {
                 console.log("resulet in deleteSingleTask :", ResultDeletedMeeting.data);
                 console.log("you successfuly deleted the task :", ResultDeletedMeeting.data.MeetingName);
-                $location.path("/Meeting");
+                $location.path("/meeting");
             })
             .catch((error) => {
                 console.log("error in deleteSingleMeeting", error)
