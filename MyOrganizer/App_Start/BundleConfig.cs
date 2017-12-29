@@ -23,13 +23,15 @@ namespace MyOrganizer
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                "~/Scripts/angular.js",
                "~/Scripts/angular-route.js",
-               "~/Scripts/angular-ui/ui-bootstrap.js",
+               "~/Scripts/angular-animate.min.js",
+               "~/Scripts/angular-ui/ui-bootstrap.js",               
                "~/App/app.js",
                "~/App/appConfig.js").IncludeDirectory("~/App/controllers", "*.js", true));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/main.css"));
         }
     }
 }

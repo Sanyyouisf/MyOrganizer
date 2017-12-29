@@ -113,3 +113,4 @@ C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrat
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.CreatMeetingModel.resources
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.MeetingDateTimeTypeChange.resources
 C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.Migrations.deleteTestModel.resources
+C:\Users\Developer\projects\MyOrganizer\MyOrganizer\obj\Debug\MyOrganizer.csprojResolveAssemblyReference.cache

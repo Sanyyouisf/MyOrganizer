@@ -63,6 +63,7 @@
                 $location.path("/");
             })
             .catch((error) => {
+                console.log("error ", error);
                 //the true message is $scope.error which is error.data.error_description;
                 $scope.error = error.data.error_description;
                 $scope.alerts.push({ msg: error.data.error_description });
@@ -96,6 +97,7 @@
                 $scope.authenticate = false;
             })
             .catch((error) => {
+                console.log("error ", error );
                 $scope.error = error.data.error_description;
                 $scope.alerts.push({ msg: error.data.Message});
                 console.log("error in register :", error.data.Message);

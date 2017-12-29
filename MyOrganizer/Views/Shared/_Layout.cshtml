@@ -8,24 +8,24 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body ng-app="MyOrganizer">
-    <div class="navbar navbar-inverse navbar-fixed-top MainNavBar">
+    @*<div class="navbar navbar-inverse navbar-fixed-top MainNavBar">
         <div class="container">
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav"> 
                     <li > My Organizer</li>
-                    @*<li><a ng-if='isLoggedIn()' ng-href="#!/addressBook">Address Book</a></li>
-                    <li><a ng-if='isLoggedIn()' ng-href="#!/task">Task</a></li>
-                    <li><a ng-if='isLoggedIn()' ng-href="#!/meeting">Meeting</a></li>*@
+                    <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook">Address Book</a></li>
+                    <li><a ng-if='isLoggedIn()' ng-href="#!/task">HI</a></li>
+                    <li><a ng-if='isLoggedIn()' ng-href="#!/meeting">Meeting</a></li>
                     <li><a ng-if='isLoggedIn()' ng-click='Logout()'  href= " ">Logout </a></li>
                 </ul>
             </div>
         </div>
-    </div>
+    </div>*@
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My Organizer App Sany Yousif</p>
+            <p id="footer">&copy; @DateTime.Now.Year - My Organizer App Sany Yousif</p>
         </footer>
     </div>
 
