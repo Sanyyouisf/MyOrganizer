@@ -52,14 +52,13 @@
         }))
             .then((result) => {
                 console.log("result in editSingleAddress:", result);
-                //$scope.getsingleAddress();
                 $location.path("/addressBook");
                 $scope.alerts = [];
                 //$scope.singleAddress = {};
             })
             .catch((error) => {
                 console.log("error in editSingleAddress:", error);
-                //$scope.alerts.push({ msg: error.data.Message });
+                $scope.alerts.push({ msg: error.data.Message });
             })
     };
 

@@ -29,9 +29,9 @@ namespace MyOrganizer
                "~/App/appConfig.js").IncludeDirectory("~/App/controllers", "*.js", true));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css",
-                      "~/Content/main.css"));
+                    "~/Content/main.css",
+                    "~/Content/bootstrap.css",
+                     "~/Content/site.css"));
         }
     }
 }
