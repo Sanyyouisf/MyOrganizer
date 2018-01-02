@@ -1,0 +1,37 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top AddressListNavBar" ng-hide="NewAddressNavBar">
+    <div class="container">
+        <div class="navbar-collapse collapse ">
+            <ul class="nav navbar-nav navbar-left" ng-if='isLoggedIn()'>
+                <li><a href=""> {{UserName}}'s meeting List</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ng-if='isLoggedIn()' ng-href="#!/">Home</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/meeting/new">New Meeting</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook">Address Book</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/Task">Tasks</a></li>
+                <li><a ng-if='isLoggedIn()' ng-click='Logout()' href=" ">Logout </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="MeetingList">
+    <h1>Meeting List</h1>
+    <div class="searchText ">
+        <input type="text" class="input-lg" placeholder="Search For ..." ng-model="searchText">
+    </div>
+    <div ng-repeat="meeting in meetingList | filter: searchText">
+        <div class="panel panel-default panel-body">
+            <div class="col-xs-8">
+                <a ng-href="#!/meeting/{{meeting.Id}}">
+                    <div class="col-xs-4">{{meeting.MeetingName}} &nbsp; {{meeting.MeetingDate}}</div>
+                    <div class="col-xs-2"> {{meeting.Notes}} </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

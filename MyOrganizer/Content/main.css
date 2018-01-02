@@ -1,0 +1,107 @@
+﻿
+/*##############################
+nav bar and footer
+##############################*/
+
+#footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 50px;
+    width: 100%;
+    background: #D4CECE;
+    padding: 15px 50px;
+    z-index: 1000;
+    /*margin-top: 20px;*/
+}
+
+#appName {
+    font-size: 2rem;
+    color: #FFF;
+}
+
+/*##############################
+list Items
+##############################*/
+.title {
+    font-size: 2.2rem;
+    color:white;
+}
+
+#item {
+    font-size: 1.5rem;
+    color: black;
+    background-color: #f0fff0;
+}
+
+.list {
+    margin-top: 20px;
+}
+
+#newAddressForm  {
+    border-color: green;
+    border-style: solid;
+    border-radius: 15px;
+    padding: 30px 30px;
+    background-color: cornsilk;
+    margin-top: 20px;
+}
+
+#editAddressForm {
+    border-color: green;
+    border-style: solid;
+    border-radius: 15px;
+    padding: 30px 30px;
+    background-color: cornsilk;
+    margin-top: 20px;
+}
+    
+.alert {
+        margin: 20px auto;
+        text-align: center;
+    }
+
+#inlineInputBox {
+     display:inline-block;
+ }
+
+.span {
+    font-weight: bold;
+}
+
+.AbBackground {
+    background-image: url("/Picture/ABList3.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+#bodyContainer {
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+}
+
+#scopeContainer {
+    margin: 0;
+    padding: 0;
+}
+
+.AbTitle {
+    font-family: 'Vast Shadow';
+}
+
+#singleAddress {
+    border-color: green;
+    border-style: solid;
+    border-radius: 15px;
+    padding: 30px 30px;
+    background-color: cornsilk;
+    margin-top: 20px;
+}
+
+.space {
+    margin: 20px 10px;
+}
+
+
+

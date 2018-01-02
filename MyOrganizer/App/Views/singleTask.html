@@ -1,0 +1,45 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top NewAddressNavBar" ng-hide="AddressListNavBar">
+    <div class="container">
+        <div class="navbar-collapse collapse ">
+            <ul class="nav navbar-nav navbar-left" ng-if='isLoggedIn()'>
+                <li><a href=""> {{UserName}}'s Tasks</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ng-if='isLoggedIn()' ng-href="#!/">Home</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/task/new">Add Task</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/task">Task List</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook">Address List</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/meeting">Meeting</a></li>
+                <li><a ng-if='isLoggedIn()' ng-click='Logout()' href=" ">Logout </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<h1>single Task page</h1>
+<div class="panel panel-default panel-body">
+    <!--<div class="panel-body">-->
+    <div class="col-xs-12">
+        <div class="col-xs-3"> {{singleTask.TaskName}} &nbsp; {{singleTask.TaskDate}}</div>
+        <div class="col-xs-3"> {{singleTask.Description}} </div>
+        <div class="col-xs-4"> {{singleTask.Done}}</div>
+        <!--</div>-->
+    </div>
+    <div class="col-xs-4 ">
+        <!--<a ng-href="#!/addressbooks/edit/{{item.id}}">-->
+        <button class="btn btn-danger fa fa-pencil-square-o" ng-click="editSingleTask(singleTask.Id)"></button>
+        <!--</a>-->
+    </div>
+
+    <div class="col-xs-4 ">
+        <!--<a ng-href="#!/addressBooks/list">-->
+        <button class="btn btn-danger fa fa-trash-o" ng-click="deleteSingleTask(singleTask.Id)"></button>
+        <!--</a>-->
+    </div>
+
+    <div class=" col-xs-2">
+        <label for="taskDone">Done</label>
+        <input type="checkbox" Id="taskDone " class="checkbox" ng-click="taskDone(singleTask.Id)">
+    </div>
+
+</div>

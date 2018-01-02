@@ -1,0 +1,80 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top NewAddressNavBar" ng-hide="AddressListNavBar">
+    <div class="container">
+        <div class="navbar-collapse collapse ">
+            <ul class="nav navbar-nav navbar-left" ng-if='isLoggedIn()'>
+                <li><a href=""> {{UserName}}'s Tasks</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ng-if='isLoggedIn()' ng-href="#!/">Home</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/task">Tasks List </a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook">Address Book</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/meeting">Meeting</a></li>
+                <li><a ng-if='isLoggedIn()' ng-click='Logout()' href=" ">Logout </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<h3>New Task</h3>
+<div class="form-group">
+    <div class="form-group">
+        <input type="text" class="form-control " placeholder="Task Name" ng-model="newTask.TaskName" />
+    </div>
+    <!--<div class="form-group">
+        <input type="text" id ="date" name="date" class="form-control " placeholder="TaskDate" datepicker-popup="MM/dd/yyyy" datepicker-options="dateOptions" ng-model="newTask.TaskDate" />
+    </div>-->
+
+    <!--<div class="input-group col-xs-6 col-xs-offset-3">
+        <span class="input-group-addon" id="sizing-addon1" ng-click="displayCalender()">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+        </span>
+        <input type="text" class="form-control"  placeholder="TaskDate" datepicker-popup="MM/dd/yyyy" ng-model="newTask.TaskDate">
+    </div>-->
+
+    <div class="form-group">
+        <input type="date" class="form-control" datepicker-popup="MM/dd/yyyy" ng-model="newTask.TaskDate" is-open="isOpened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+        <span class="input-group-btn">
+            <!--<button type="button" class="btn btn-default" ng-click="isOpened2 = !isOpened2">
+                <i class="glyphicon glyphicon-calendar"></i>
+            </button>-->
+        </span>
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control " placeholder="Description" ng-model="newTask.Description" />
+    </div>
+    <label>Repeate</label>
+    <div class="form-group">
+        <input type="checkbox" class="checkbox "   ng-click="repeateTask = !repeateTask"/>
+    </div>
+
+    <div class ="repeateTask" ng-show="repeateTask">
+        <label>Repeate every </label>
+        <div class="form-group">
+            <select ng-model="newTask.Interval">
+                <option value="0">None</option>
+                <option value="1">Daily</option>
+                <option value="2">Weekly</option>
+                <option value="3">Monthly</option>
+            </select>
+        </div>
+        <label>Repeating Period </label>
+        <div class="form-group">
+            <select ng-model="newTask.Period">
+                <option value="0">None</option>
+                <option value="1">Week</option>
+                <option value="2">Month</option>
+                <option value="3">SixMonthes</option>
+                <option value="4">OneYear</option>
+            </select>
+        </div>
+    </div>
+
+    <button class="btn btn-default " ng-click="addNewTask()">Submit</button>
+
+    <div class="container">
+        <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + 'warning'" close="closeAlert($index)" class="alert col-xs-4 col-xs-offset-4">
+            {{alert.msg}}
+        </div>
+    </div>
+</div>

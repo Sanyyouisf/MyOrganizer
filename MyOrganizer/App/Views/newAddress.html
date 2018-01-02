@@ -1,0 +1,75 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top NewAddressNavBar" ng-hide="AddressListNavBar">
+    <div class="container">
+        <div class="navbar-collapse collapse ">
+            <ul class="nav navbar-nav navbar-left" ng-if='isLoggedIn()'>
+                <li><a href=""> {{UserName}}'s Address Book</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ng-if='isLoggedIn()' ng-href="#!/">Home</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook">Address List</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/task">Task</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/meeting">Meeting</a></li>
+                <li><a ng-if='isLoggedIn()' ng-click='Logout()' href=" ">Logout </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--<div class="AbBackground">-->
+<h3 class=" col-md-6 col-md-offset-3">Add new address</h3>
+<div class="container panel panel-body ">
+    <div class=" col-sm-6 col-sm-offset-2" id="newAddressForm" >
+        <div class="form-group">
+
+            <div class="form-group row">
+                <span class="span col-sm-3">First Name</span>
+                <input type="text" class="form-control col-sm-6" id="inlineInputBox" placeholder="First Name" ng-model="newAddress.FirstName" />
+            </div>
+            <div class="form-group row">
+                <span class="span col-sm-3">Last Name</span>
+                <input type="text" class="form-control col-sm-6" id="inlineInputBox" placeholder="Last Name" ng-model="newAddress.LastName" />
+            </div>
+            <div class="form-group row">
+                <span class="span col-sm-3">Tel</span>
+                <input type="text" class="form-control col-sm-6" id="inlineInputBox" placeholder="Tel" ng-model="newAddress.Tel" />
+            </div>
+            <div class="form-group row">
+                <span class="span col-sm-3">Email</span>
+                <input type="text" class="form-control col-sm-6" id="inlineInputBox" placeholder="Email" ng-model="newAddress.Email" />
+            </div>
+            <div class="form-group row">
+                <span class="span col-sm-3">Street</span>
+                <input type="text" class="form-control col-sm-6" id="inlineInputBox" placeholder="Street" ng-model="newAddress.Street" />
+            </div>
+            <div class="form-group row">
+                <span class="span col-sm-3">City </span>
+                <input type="text" class="form-control col-sm-6" id="inlineInputBox" placeholder="City" ng-model="newAddress.City" />
+            </div>
+            <div class="form-group row">
+                <span class="span col-sm-3">State</span>
+                <input type="text" class="form-control col-sm-6 " id="inlineInputBox" placeholder="State" ng-model="newAddress.State" />
+            </div>
+            <div class="form-group row">
+                <span class="span col-sm-3">Zipcode</span>
+                <input type="text" class="form-control col-sm-6 "  id="inlineInputBox" placeholder="Zipcode" ng-model="newAddress.Zipcode" />
+            </div>
+            <div class="form-group row">
+                <span class="span col-sm-3">RelationShip</span>
+                <select ng-model="newAddress.RelationShip" class="col-md-6">
+                    <option value="0">Family</option>
+                    <option value="1">Friend</option>
+                    <option value="2" selected>Others</option>
+                </select>
+            </div>
+            <div class="col-sm-offset-3">
+                <button class="btn btn-default " ng-click="addNewAddress()">Add</button>
+            </div>
+            <div class="container ">
+                <div ng-repeat="alert in alerts" ng-class="'alert-' + 'danger'" close="closeAlert($index)" class="alert col-xs-4 col-xs-offset-4">
+                    {{alert.msg}}
+               </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!--</div>-->
