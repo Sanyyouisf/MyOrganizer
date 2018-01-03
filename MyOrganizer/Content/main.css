@@ -38,7 +38,7 @@ list Items
     margin-top: 20px;
 }
 
-#newAddressForm  {
+#newAddressForm, #editAddressForm, #editMForm, #newMForm {
     border-color: green;
     border-style: solid;
     border-radius: 15px;
@@ -47,29 +47,21 @@ list Items
     margin-top: 20px;
 }
 
-#editAddressForm {
-    border-color: green;
-    border-style: solid;
-    border-radius: 15px;
-    padding: 30px 30px;
-    background-color: cornsilk;
-    margin-top: 20px;
-}
     
 .alert {
         margin: 20px auto;
         text-align: center;
     }
 
-#inlineInputBox {
-     display:inline-block;
- }
+#inlineAbInputBox, #inlineMInputBox {
+    display: inline-block;
+}
 
 .span {
     font-weight: bold;
 }
 
-.AbBackground {
+.AbBackground, .MBackground {
     background-image: url("/Picture/ABList3.jpg");
     background-repeat:no-repeat;
     background-size: cover;
@@ -86,11 +78,11 @@ list Items
     padding: 0;
 }
 
-.AbTitle {
+.AbTitle , .MTitle {
     font-family: 'Vast Shadow';
 }
 
-#singleAddress {
+#singleAddress, #singleMeeting {
     border-color: green;
     border-style: solid;
     border-radius: 15px;

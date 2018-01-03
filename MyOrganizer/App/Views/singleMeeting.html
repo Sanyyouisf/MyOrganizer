@@ -8,36 +8,49 @@
                 <li><a ng-if='isLoggedIn()' ng-href="#!/">Home</a></li>
                 <li><a ng-if='isLoggedIn()' ng-href="#!/meeting/new">Add Meeting</a></li>
                 <li><a ng-if='isLoggedIn()' ng-href="#!/meeting">Meeting List</a></li>
-                <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook">Address List</a></li>
-                <li><a ng-if='isLoggedIn()' ng-href="#!/meeting">Meeting</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook">Address book</a></li>
+                <li><a ng-if='isLoggedIn()' ng-href="#!/task">Tasks</a></li>
                 <li><a ng-if='isLoggedIn()' ng-click='Logout()' href=" ">Logout </a></li>
             </ul>
         </div>
     </div>
 </div>
 
-<h1>single Meeting page</h1>
-<div class="panel panel-default panel-body">
-    <div class="col-xs-12">
-        <div class="col-xs-3"> {{singleMeeting.MeetingName}} &nbsp; {{singleMeeting.MeetingDate}}</div>
-        <div class="col-xs-3"> {{singleMeeting.Notes}} </div>
-        <div class="col-xs-4"> {{singleMeeting.Done}}</div>
-    </div>
-    <div class="col-xs-4 ">
-        <!--<a ng-href="#!/addressbooks/edit/{{item.id}}">-->
-        <button class="btn btn-danger fa fa-pencil-square-o" ng-click="editSingleMeeting(singleMeeting.Id)"></button>
-        <!--</a>-->
+<h1 class="col-sm-offset-2">{{singleMeeting.MeetingName}} Meeting</h1>
+<div class="panel panel-body col-sm-8 col-sm-offset-2" id="singleMeeting">
+
+    <div class="row space">
+        <span class="span col-sm-2">Meeting name:</span>
+        <p class="col-sm-8"> {{singleMeeting.MeetingName}} </p>
     </div>
 
-    <div class="col-xs-4 ">
-        <!--<a ng-href="#!/addressBooks/list">-->
-        <button class="btn btn-danger fa fa-trash-o" ng-click="deleteSingleMeeting(singleMeeting.Id)"></button>
-        <!--</a>-->
+    <div class="row space">
+        <span class="span col-sm-2">Meeting date:</span>
+        <p class="col-sm-8"> {{singleMeeting.MeetingDate}} </p>
     </div>
 
-    <div class=" col-xs-2">
-        <label for="taskDone">Done</label>
-        <input type="checkbox" Id="taskDone " class="checkbox" ng-click="meetingDone(singleMeeting.Id)">
+    <div class="row space">
+        <span class="span col-sm-2">Meeting Notes:</span>
+        <p class="col-sm-8">{{singleMeeting.Notes}} </p>
     </div>
 
+    <div class="row space">
+        <div class="col-sm-4 ">
+            <button class=" btn btn-success glyphicon glyphicon-pencil" ng-click="editSingleMeeting(singleMeeting.Id)"></button>
+        </div>
+        <div class="col-sm-4 ">
+            <button class="btn btn-danger glyphicon glyphicon-trash" ng-click="deleteSingleMeeting(singleMeeting.Id)"></button>
+        </div>
+
+        <div class="form-group ">
+            <span class="span col-sm-1">Done</span>
+            <input type="checkbox" class="checkbox " id="inlineMInputBox" ng-click="meetingDone(singleMeeting.Id)" />
+        </div>
+    </div>
 </div>
+
+
+  
+
+   
+

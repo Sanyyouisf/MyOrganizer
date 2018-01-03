@@ -2,7 +2,7 @@
     console.log("in homeController");
 
     $scope.ListToDo = [];
-    $scope.MeetingListToDo = [];
+   // $scope.MeetingListToDo = [];
     $scope.ToDoList = false;
 
 //------to get the list that not done -----------------------------------------------------

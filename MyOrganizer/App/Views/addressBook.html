@@ -15,28 +15,26 @@
     </div>
 </div>
 
-<div class="AbBackground">
-    <div class="AddressList" ng-hide="NewAddressBook">  
-        <div class="container">
-            <div class="searchText input-group col-md-8 col-md-offset-2 list">
-                <h1 class="AbTitle">Address Book</h1>
-                <input type="text" class="input-lg" placeholder="Search For ..." ng-model="searchText">
-            </div>
-            <div class="panel panel-success col-md-8 col-md-offset-2 list" >
-                <div class="panel panel-success panel-heading title">{{UserName}}'s Address Book List</div>
-                    <div ng-repeat="address in addressBookList | filter: searchText">
-                        <a href="#!/addressBook/{{address.Id}}">
-                            <div class="panel panel-success panel-body" id="item" >
-                                <div class="col-xs-8">
-                                    <div class="col-xs-6">{{address.FirstName}} &nbsp; {{address.LastName}}</div>
-                                    <div class="col-xs-2"> {{address.Tel}} </div>
-                                </div>
-                            </div>
-                        </a>         
+<div class="AbBackground AddressList">
+     <div class="container">
+         <div class="searchText input-group col-md-8 col-md-offset-2 list">
+             <h1 class="AbTitle">Address Book</h1>
+             <input type="text" class="input-lg" placeholder="Search For ..." ng-model="searchText">
+         </div>
+         <div class="panel panel-success col-md-8 col-md-offset-2 list" >
+             <div class="panel panel-success panel-heading title">{{UserName}}'s Address Book List</div>
+                 <div ng-repeat="address in addressBookList | filter: searchText">
+                     <a href="#!/addressBook/{{address.Id}}">
+                         <div class="panel panel-success panel-body" id="item" >
+                             <div class="col-xs-8">
+                                 <div class="col-xs-6">{{address.FirstName}} &nbsp; {{address.LastName}}</div>
+                                 <div class="col-xs-2"> {{address.Tel}} </div>
+                             </div>
+                         </div>
+                     </a>         
                 </div>
             </div>
-        </div>
-    </div>
+     </div>
 </div>
 
 
