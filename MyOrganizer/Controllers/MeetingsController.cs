@@ -45,9 +45,6 @@ namespace MyOrganizer.Controllers
             return db.Meetings.Where(M => M.Done.ToString().ToLower() == "false"
                                       && M.MeetingDate.Month == DateTime.Today.Month
                                       && M.MeetingDate.Year == DateTime.Today.Year);
-            //return db.Tasks.Where(c => c.Done.ToString().ToLower() == "false"
-            //                      && c.TaskDate.Year == DateTime.Today.Year
-            //                      && c.TaskDate.Month == DateTime.Now.AddMonths(1) )
         }
 //--------to mark the meeting as Done-----------------------------------------------------------
         // PUT : api/Meetings/Done/3
@@ -329,7 +326,6 @@ namespace MyOrganizer.Controllers
             return Ok();
         }
 //----------------------------------------------------------------------------------
-
         // DELETE: api/Meetings/5
         [ResponseType(typeof(Meetings))]
         public IHttpActionResult DeleteMeetings(int id)
