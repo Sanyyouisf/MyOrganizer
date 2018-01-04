@@ -95,5 +95,32 @@ list Items
     margin: 20px 10px;
 }
 
+#TaskToDoList {
+    border-color: green;
+    border-style: solid;
+    border-radius: 15px;
+    padding: 30px 30px;
+    background-color: cornsilk;
+    margin-top: 20px;
+    border-width:thick;
+}
+
+#MeetingToDoList {
+    border-color: darkblue;
+    border-style: solid;
+    border-radius: 15px;
+    padding: 30px 30px;
+    background-color: gainsboro;
+    margin-top: 20px;
+    border-width: thick;
+}
+
+.ToDoTitle {
+    color:brown;
+    font-size:1.5rem;
+    text-align :center;
+    font-weight:bold;
+}
+
 
 
