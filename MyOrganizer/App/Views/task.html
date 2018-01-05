@@ -15,7 +15,7 @@
     </div>
 </div>
 
-<div class="TBackground TaskList">
+<div id="TaskBackground">
     <div class="container">
         <div class="searchText input-group col-sm-10  list">
             <div class="TaskList col-sm-offset-2">
@@ -28,7 +28,8 @@
                     <div class="panel panel-success panel-body" id="item">
                         <div class="col-sm-12">
                             <a href="#!/task/{{task.Id}}">
-                                <div class="col-sm-8">{{task.TaskName}} &nbsp; {{task.TaskDate}}</div>
+                                <div class="col-sm-8">{{task.TaskName}} &nbsp; {{task.TaskDate | date:"MM/dd/yyyy "}}</div>
+
                                 <div class="col-sm-10"> {{task.Description}} </div>
                             </a>
                         </div>

@@ -15,32 +15,33 @@
     </div>
 </div>
 
-
-<div class="container  panel panel-body ToDoList" ng-show="ToDoList">
-    <div class=" panel panel-body col-sm-8 col-sm-offset-2" id="TaskToDoList">
-        <div class="form-group ToDoTitle">you Task List</div>
-        <div class="form-group">
-            <div ng-repeat="item in TasksListToDo">
-                <div class="panel panel-default panel-body ">
-                    <div class="col-xs-10">
-                        <div class="col-xs-7">{{item.TaskName}} &nbsp; {{item.TaskDate}}</div>
-                        <div class="col-xs-4"> {{item.Description}} </div>
+<div id="HomeBackground" >
+    <div class="container ToDoList" ng-show="ToDoList" >
+        <div class=" panel panel-body col-sm-10 col-sm-offset-1 " id="TaskToDoList" >
+            <div class="form-group ToDoTitle">YOUR TASK LIST</div>
+            <div class="form-group ">
+                <div ng-repeat="item in TasksListToDo">
+                    <div class="panel panel-default panel-body " id="TListToDoItemBg">
+                        <div class="col-xs-10">
+                            <div class="col-xs-7">{{item.TaskName}} &nbsp; {{item.TaskDate | date:"MM/dd/yyyy "}}</div>
+                            <div class="col-xs-4"> {{item.Description}} </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="container panel panel-body ToDoList" ng-show="ToDoList">
-    <div class=" col-sm-8 col-sm-offset-2" id="MeetingToDoList">
-        <div class="form-group ToDoTitle">you Meeting List</div>
-        <div class="form-group">
-            <div ng-repeat="item2 in MeetingListToDo">
-                <div class="panel panel-default panel-body ">
-                    <div class="col-xs-10">
-                        <div class="col-xs-7">{{item2.MeetingName}} &nbsp; {{item2.MeetingDate}}</div>
-                        <div class="col-xs-2"> {{item2.Notes}} </div>
+    <div class="container ToDoList" ng-show="ToDoList">
+        <div class=" panel panel-body col-sm-10 col-sm-offset-1" id="MeetingToDoList" >
+            <div class="form-group ToDoTitle">YOUR MEETING LIST</div>
+            <div class="form-group">
+                <div ng-repeat="item2 in MeetingListToDo">
+                    <div class="panel panel-default panel-body" id="MListToDoItemBg">
+                        <div class="col-xs-10">
+                            <div class="col-xs-7">{{item2.MeetingName}} &nbsp; {{item2.MeetingDate | date:"MM/dd/yyyy "}}</div>
+                            <div class="col-xs-2"> {{item2.Notes}} </div>
+                        </div>
                     </div>
                 </div>
             </div>

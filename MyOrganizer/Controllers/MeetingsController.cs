@@ -263,7 +263,7 @@ namespace MyOrganizer.Controllers
                     var numberOfMeetings = 4;
                     for (var i = 0; i < numberOfMeetings; i++)
                     {
-                        var today = meeting.MeetingDate.AddDays(i);
+                        var today = meeting.MeetingDate.AddDays(i*7);
                         var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today, Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
                         db.Meetings.Add(meetings);
                     }
@@ -276,7 +276,7 @@ namespace MyOrganizer.Controllers
                     var numberOfMeetings = 52;
                     for (var i = 0; i < numberOfMeetings; i++)
                     {
-                        var today = meeting.MeetingDate.AddDays(i);
+                        var today = meeting.MeetingDate.AddDays(i*7);
                         var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today, Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
                         db.Meetings.Add(meetings);
                     }
@@ -300,7 +300,7 @@ namespace MyOrganizer.Controllers
                     var numberOfMeetings = 1;
                     for (var i = 0; i < numberOfMeetings; i++)
                     {
-                        var today = meeting.MeetingDate.AddDays(i);
+                        var today = meeting.MeetingDate.AddMonths(i);
                         var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today, Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
                         db.Meetings.Add(meetings);
                     }
@@ -313,7 +313,7 @@ namespace MyOrganizer.Controllers
                     var numberOfMeetings = 12;
                     for (var i = 0; i < numberOfMeetings; i++)
                     {
-                        var today = meeting.MeetingDate.AddDays(i);
+                        var today = meeting.MeetingDate.AddMonths(i);
                         var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today, Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
                         db.Meetings.Add(meetings);
                     }

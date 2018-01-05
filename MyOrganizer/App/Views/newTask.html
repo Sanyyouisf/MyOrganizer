@@ -15,62 +15,53 @@
     </div>
 </div>
 
-<h3 class=" col-md-6 col-md-offset-3">Add new Task</h3>
-<div class="container panel panel-body ">
-    <div class=" col-sm-6 col-sm-offset-2" id="newTForm">
-        <div class="form-group">
-            <div class="form-group row">
-                <span class="span col-sm-3">Task name</span>
-                <input type="text" class="form-control col-sm-6" id="inlineTInputBox" placeholder="Task Name" ng-model="newTask.TaskName" />
-            </div>
-
-            <div class="form-group row">
-                <span class="span col-sm-3">Task Date</span>
-                <input type="date" class="form-control" datepicker-popup="MM/dd/yyyy" id="inlineTInputBox" ng-model="newTask.TaskDate" is-open="isOpened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-                <span class="input-group-btn"></span>
-            </div>
-
-            <div class="form-group row">
-                <span class="span col-sm-3">Description</span>
-                <input type="text" class="form-control " id="inlineMInputBox" placeholder="Description" ng-model="newTask.Description" />
-            </div>
-                
-                    <!--<div class="form-group">
-                        <input type="text" id ="date" name="date" class="form-control " placeholder="TaskDate" datepicker-popup="MM/dd/yyyy" datepicker-options="dateOptions" ng-model="newTask.TaskDate" />
-                    </div>-->
-                    <!--<div class="input-group col-xs-6 col-xs-offset-3">
-                        <span class="input-group-addon" id="sizing-addon1" ng-click="displayCalender()">
-                            <i class="fa fa-calendar" aria-hidden="true"></i>
-                        </span>
-                        <input type="text" class="form-control"  placeholder="TaskDate" datepicker-popup="MM/dd/yyyy" ng-model="newTask.TaskDate">
-                    </div>-->
-
-                    <!--<label>Repeate</label>-->
+<div id="newTaskBackground">
+     <h3 class=" col-md-6 col-md-offset-3">Add new Task</h3>
+    <div class="container panel-body ">
+        <div class=" col-sm-6 col-sm-offset-2" id="newTForm">
             <div class="form-group">
-                <span class="span col-sm-3">Repeate</span>
-                <input type="checkbox" class="checkbox " ng-click="repeateTask = !repeateTask" />
-            </div>
-            <div class="repeateTask" ng-show="repeateTask">
+                <div class="form-group row">
+                    <span class="span col-sm-3">Task name</span>
+                    <input type="text" class="form-control col-sm-6" id="inlineTInputBox" placeholder="Task Name" ng-model="newTask.TaskName" />
+                </div>
+
+                <div class="form-group row">
+                    <span class="span col-sm-3">Task Date</span>
+                    <input type="date" class="form-control" datepicker-popup="MM/dd/yyyy" id="inlineTInputBox" ng-model="newTask.TaskDate" is-open="isOpened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                    <span class="input-group-btn"></span>
+                </div>
+
+                <div class="form-group row">
+                    <span class="span col-sm-3">Description</span>
+                    <input type="text" class="form-control " id="inlineMInputBox" placeholder="Description" ng-model="newTask.Description" />
+                </div>
+
                 <div class="form-group">
-                    <span class="span col-sm-3">Repeate every</span>
-                    <div class="form-group row col-sm-3">
-                        <select ng-model="newTask.Interval" >
-                            <option>None</option>
-                            <option>Daily</option>
-                            <option>Weekly</option>
-                            <option>Monthly</option>
-                        </select>
-                    </div>
-                    
-                    <span class="span col-sm-3">Repeating Period</span>
-                    <div class="form-group row ">
-                        <select ng-model="newTask.Period">
-                            <option>None</option>
-                            <option>Week</option>
-                            <option>Month</option>
-                            <option>SixMonthes</option>
-                            <option>OneYear</option>
-                        </select>
+                    <span class="span col-sm-3">Repeate</span>
+                    <input type="checkbox" class="checkbox " ng-click="repeateTask = !repeateTask" />
+                </div>
+                <div class="repeateTask" ng-show="repeateTask">
+                    <div class="form-group">
+                        <span class="span col-sm-3">Repeate every</span>
+                        <div class="form-group row col-sm-3">
+                            <select ng-model="newTask.Interval">
+                                <option>None</option>
+                                <option>Daily</option>
+                                <option>Weekly</option>
+                                <option>Monthly</option>
+                            </select>
+                        </div>
+
+                        <span class="span col-sm-3">Repeating Period</span>
+                        <div class="form-group row ">
+                            <select ng-model="newTask.Period">
+                                <option>None</option>
+                                <option>Week</option>
+                                <option>Month</option>
+                                <option>SixMonthes</option>
+                                <option>OneYear</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <button class="btn btn-default " ng-click="addNewTask()">Submit</button>
@@ -79,7 +70,7 @@
                         {{alert.msg}}
                     </div>
                 </div>
-           </div>
-        </div>
-     </div>
-</div>
+            </div>
+         </div>
+    </div>
+ </div>

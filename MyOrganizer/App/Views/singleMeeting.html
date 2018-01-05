@@ -16,39 +16,40 @@
     </div>
 </div>
 
-<h1 class="col-sm-offset-2">{{singleMeeting.MeetingName}} Meeting</h1>
-<div class="panel panel-body col-sm-8 col-sm-offset-2" id="singleMeeting">
-    <!--<div class="panel panel-default panel-body">-->
-
-    <div class="row space">
-        <span class="span col-sm-2">Meeting name:</span>
-        <p class="col-sm-8"> {{singleMeeting.MeetingName}} </p>
-    </div>
-
-    <div class="row space">
-        <span class="span col-sm-2">Meeting date:</span>
-        <p class="col-sm-8"> {{singleMeeting.MeetingDate}} </p>
-    </div>
-
-    <div class="row space">
-        <span class="span col-sm-2">Meeting Notes:</span>
-        <p class="col-sm-8">{{singleMeeting.Notes}} </p>
-    </div>
-
-    <div class="row space">
-        <div class="col-sm-4 ">
-            <button class=" btn btn-success glyphicon glyphicon-pencil" ng-click="editSingleMeeting(singleMeeting.Id)"></button>
-        </div>
-        <div class="col-sm-4 ">
-            <button class="btn btn-danger glyphicon glyphicon-trash" ng-click="deleteSingleMeeting(singleMeeting.Id)"></button>
+<div id="singleMeetingBackground">
+    <h1 class="col-sm-offset-2">{{singleMeeting.MeetingName}} details</h1>
+    <div class="panel panel-body col-sm-8 col-sm-offset-2" id="singleMeeting">
+        <div class="row space">
+            <span class="span col-sm-2">Meeting name:</span>
+            <p class="col-sm-8"> {{singleMeeting.MeetingName}} </p>
         </div>
 
-        <div class="form-group ">
-            <span class="span col-sm-1">Done</span>
-            <input type="checkbox" class="checkbox " id="inlineMInputBox" ng-click="meetingDone(singleMeeting.Id)" />
+        <div class="row space">
+            <span class="span col-sm-2">Meeting date:</span>
+            <p class="col-sm-8"> {{singleMeeting.MeetingDate | date:"MM/dd/yyyy"}} </p>
         </div>
-    </div>
+
+        <div class="row space">
+            <span class="span col-sm-2">Meeting Notes:</span>
+            <p class="col-sm-8">{{singleMeeting.Notes}} </p>
+        </div>
+
+        <div class="row space">
+            <div class="col-sm-4 ">
+                <button class=" btn btn-success glyphicon glyphicon-pencil" ng-click="editSingleMeeting(singleMeeting.Id)"></button>
+            </div>
+            <div class="col-sm-4 ">
+                <button class="btn btn-danger glyphicon glyphicon-trash" ng-click="deleteSingleMeeting(singleMeeting.Id)"></button>
+            </div>
+
+            <div class="form-group ">
+                <span class="span col-sm-1">Done</span>
+                <input type="checkbox" class="checkbox " id="inlineMInputBox" ng-click="meetingDone(singleMeeting.Id)" />
+            </div>
+        </div>
+     </div>
 </div>
+    
 
 
   

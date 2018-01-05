@@ -15,14 +15,14 @@
     </div>
 </div>
 
-<div class="AbBackground AddressList">
+<div class="AddressList" id="AbBackground">
      <div class="container">
          <div class="searchText input-group col-md-8 col-md-offset-2 list">
-             <h1 class="AbTitle">Address Book</h1>
+             <h1 class="AbTitle">Address Book List</h1>
              <input type="text" class="input-lg" placeholder="Search For ..." ng-model="searchText">
          </div>
          <div class="panel panel-success col-md-8 col-md-offset-2 list" >
-             <div class="panel panel-success panel-heading title">{{UserName}}'s Address Book List</div>
+             <div class="panel panel-heading title">{{UserName}}'s Address Book </div>
                  <div ng-repeat="address in addressBookList | filter: searchText">
                      <a href="#!/addressBook/{{address.Id}}">
                          <div class="panel panel-success panel-body" id="item" >
