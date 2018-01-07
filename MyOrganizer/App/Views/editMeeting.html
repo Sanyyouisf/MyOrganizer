@@ -17,20 +17,20 @@
 </div>
 
 <div id="newMeetingBackground">
-    <h3 class=" col-sm-6 col-sm-offset-3">Edit {{singleMeeting.MeetingName}} </h3>
+    <h3 class=" col-sm-7 col-sm-offset-3 AbTitle">Edit {{singleMeeting.MeetingName}} </h3>
     <div class="container">
         <div class=" col-sm-6 col-sm-offset-2" id="editMForm">
             <div class="form-group">
 
                 <div class="form-group row">
-                    <span class="span col-sm-3">MeetingName</span>
+                    <span class="span col-sm-4">MeetingName</span>
                     <div class="form-group">
                         <input type="text" class="form-control " placeholder="singleMeeting.MeetingName" ng-model="singleMeeting.MeetingName" />
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <span class="span col-sm-3">meeting date</span>
+                    <span class="span col-sm-4">meeting date</span>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="singleMeeting.MeetingDate.ToShortDateString()" datepicker-popup="MM/dd/yyyy" id="inlineMInputBox" ng-model="singleMeeting.MeetingDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
                         <span class="input-group-btn"></span>
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <span class="span col-sm-3">Notes</span>
+                    <span class="span col-sm-4">Notes</span>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="singleMeeting.Notes" ng-model="singleMeeting.Notes" />
                     </div>

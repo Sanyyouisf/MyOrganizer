@@ -25,6 +25,8 @@ namespace MyOrganizer.Migrations
             };
 
             userManager.CreateAsync(user, "123456").Wait();
+
+
         }
     }
 }

@@ -16,28 +16,28 @@
 </div>
 
 <div id="newMeetingBackground">
-    <h3 class=" col-md-6 col-md-offset-3">Add new Meeting</h3>
+    <h3 class=" col-md-6 col-md-offset-3 AbTitle">Add new Meeting</h3>
     <div class="container panel-body ">
-        <div class=" col-sm-6 col-sm-offset-2" id="newMForm">
+        <div class=" col-sm-8 col-sm-offset-2" id="newMForm">
             <div class="form-group">
                 <div class="form-group row">
-                   <span class="span col-sm-3">Meeting Name</span>
+                   <span class="span col-sm-4">Meeting Name</span>
                    <input type="text" class="form-control col-sm-6" id="inlineMInputBox" placeholder="Meeting Name" ng-model="newMeeting.MeetingName" />
                 </div>
 
                 <div class="form-group row">
-                     <span class="span col-sm-3">Meeting Date</span>
+                     <span class="span col-sm-4">Meeting Date</span>
                      <input type="date" class="form-control" datepicker-popup="MM/dd/yyyy" id="inlineMInputBox" ng-model="newMeeting.MeetingDate" is-open="isOpened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
                      <span class="input-group-btn"></span>
                 </div>
 
                 <div class="form-group row">
-                    <span class="span col-sm-3">Notes</span>
+                    <span class="span col-sm-4">Notes</span>
                     <input type="text" class="form-control " id="inlineMInputBox" placeholder="Notes" ng-model="newMeeting.Notes" />
                 </div>
 
                 <div class="form-group row">
-                    <span class="span col-sm-3">Repeate</span>
+                    <span class="span col-sm-4">Repeate</span>
                     <input type="checkbox" class="checkbox " id="inlineMInputBox" ng-click="repeateMeeting = !repeateMeeting" />
                 </div>
 

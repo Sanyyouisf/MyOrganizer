@@ -10,6 +10,7 @@
     <WebStackScaffolding_DbContextTypeFullName>MyOrganizer.Models.ApplicationDbContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <ProjectView>ShowAllFiles</ProjectView>
+    <NameOfLastUsedPublishProfile>Default Settings</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

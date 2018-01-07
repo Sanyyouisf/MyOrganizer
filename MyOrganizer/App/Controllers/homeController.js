@@ -15,7 +15,7 @@
                     .then((GetMeetingListToDoResult) => {
                         $scope.MeetingListToDo = GetMeetingListToDoResult.data;
                         console.log("MeetingListToDo data :", $scope.MeetingListToDo);
-                        $scope.ToDoList = !$scope.ToDoList;
+                        $scope.ToDoList = $scope.ToDoList === false ? true: false ;
                     })
                     .catch((error) => {
                         console.log("error in MeetingGetListToDo", error);

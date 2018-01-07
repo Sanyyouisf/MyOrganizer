@@ -17,19 +17,18 @@
 
 <div id="TaskBackground">
     <div class="container">
-        <div class="searchText input-group col-sm-10  list">
+        <div class="searchText input-group col-sm-10 list">
             <div class="TaskList col-sm-offset-2">
                 <h1 class="TTitle">Tasks List</h1>
                 <input type="text" class="input-lg" placeholder="Search For ..." ng-model="searchText">
              </div>
-            <div class="panel panel-success col-sm-10 col-sm-offset-2 list">
-                <div class="panel panel-success panel-heading title">{{UserName}}'s Tasks List</div>
+            <div class="panel panelListTitle col-sm-10 col-sm-offset-2 list" id="ListFrame">
+                <div class="panel panel-heading title" id="listTitle" >{{UserName}}'s Tasks List</div>
                 <div ng-repeat="task in tasksList | filter: searchText">
-                    <div class="panel panel-success panel-body" id="item">
-                        <div class="col-sm-12">
+                    <div class="panel panel-success panel-body " id="ListItems">
+                        <div class="col-sm-10">
                             <a href="#!/task/{{task.Id}}">
                                 <div class="col-sm-8">{{task.TaskName}} &nbsp; {{task.TaskDate | date:"MM/dd/yyyy "}}</div>
-
                                 <div class="col-sm-10"> {{task.Description}} </div>
                             </a>
                         </div>
@@ -39,3 +38,5 @@
         </div>
      </div>
 </div>
+
+

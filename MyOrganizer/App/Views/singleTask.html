@@ -18,20 +18,20 @@
 
 
 <div id="singleTaskBackground">
-    <h1 class="col-sm-offset-2">{{singleTask.TaskName}} details</h1>
-    <div class="panel panel-body col-sm-6 col-sm-offset-2" id="singleTask">
+    <h1 class="col-sm-offset-2 AbTitle" >{{singleTask.TaskName}} details</h1>
+    <div class="panel panel-body col-sm-7 col-sm-offset-2" id="singleTask">
         <div class="row space">
-            <span class="span col-sm-2">Task name:</span>
+            <span class="span col-sm-3">Task name:</span>
             <p class="col-sm-8"> {{singleTask.TaskName}} </p>
         </div>
 
         <div class="row space">
-            <span class="span col-sm-2">Task Date:</span>
+            <span class="span col-sm-3">Task Date:</span>
             <p class="col-sm-8"> {{singleTask.TaskDate | date:"MM/dd/yyyy "}} </p>
         </div>
 
         <div class="row space">
-            <span class="span col-sm-2">Description:</span>
+            <span class="span col-sm-3">Description:</span>
             <p class="col-sm-8"> {{singleTask.Description}} </p>
         </div>
 
@@ -44,7 +44,7 @@
             </div>
 
             <div class="form-group ">
-                <span class="span col-sm-1">Done</span>
+                <span class="span col-sm-1.5">Done</span>
                 <input type="checkbox" class="checkbox " id="inlineMInputBox" ng-click="taskDone(singleTask.Id)" />
             </div>
         </div>
