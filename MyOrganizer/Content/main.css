@@ -115,19 +115,71 @@ To Do list Items
 ##############################*/
 
 #TaskToDoList, #MeetingToDoList {
-    border-color: grey;
+    border-color: #9c6767;
     border-style: solid;
     border-radius: 15px;
     padding: 30px 30px;
-    background-color: gainsboro;
+    background-color: #f1c0c0;
     margin-top: 20px;
     border-width: 2px;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.inlineDiv {
+    display:inline-block;
+}
+
+#summary {
+    border-style: solid;
+    border-radius: 40%;
+    border-color: #9c6767;
+    border-width: 1px;
+    font-size:2rem;
+    background-color: #e8e9dc;
+    color:brown;
+}
+
+#summaryTitle {
+    background-color: #e8e9dc;
+    border-style: solid;
+    font-weight:bold;
+    border-radius: 40%;
+    border-color: #9c6767;
+    border-width: 1px;
+    font-size: 3rem;
+    padding: 10px;
+    margin: 15px 15px;
+    font-family: 'Indie Flower', cursive;
+    color: black;
+    text-align: center;
+}
+
+
+#summaryDetails {
+    padding: 30px;
+    color: #07096d;
+    background-color: #e8e9dc;
+    font-size: 2.5rem;
+    border-style: solid;
+    border-radius:20%;
+    margin:20px 0;
+    border-color: #9c6767;
+    border-width: 1px;
 }
 
 #TListToDoItemBg, #MListToDoItemBg {
     background-color: #ffffe0;
     color: black;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    border-color: brown;
+    /*border-color: #9c6767;*/
+    border-style: solid;
+    border-radius: 5px;
+    /*padding: 30px 30px;*/
+    /*background-color: #f1c0c0;*/
+    /*margin-top: 20px;*/
+    border-width: 2px;
+    box-shadow: 5px 5px 5px #c28b8b;
     /*font-weight:bold;*/
 }
 
@@ -135,7 +187,6 @@ To Do list Items
     color: brown;
     font-size: 3rem;
     text-align: center;
-    font-weight: bolder;
 }
 
 .panelListTitle {
@@ -173,7 +224,7 @@ background pictures
         background-repeat: no-repeat;
         width: 100%;
         height: 100%;
-        position: fixed;
+        position: relative;
     }
 
 
