@@ -2,36 +2,69 @@
     <div class="container">
         <div class="navbar-collapse collapse ">
             <ul class="nav navbar-nav navbar-left" ng-if='isLoggedIn()'>
-                <li><a href=""> {{UserName}}'s Address Book</a></li>
+                <li><a href=""> {{UserName}}  MyOrganizer</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a ng-if='isLoggedIn()' href="" ng-click='GetListToDo()' >To Do List</a></li>
                 <li><a ng-if='isLoggedIn()' ng-href="#!/addressBook" ng-click="getAddressBookList()">Address Book</a></li>
                 <li><a ng-if='isLoggedIn()' ng-href="#!/task">Task</a></li>
                 <li><a ng-if='isLoggedIn()' ng-href="#!/meeting">Meeting</a></li>
-                <li><a ng-if='isLoggedIn()' href=" " ng-click='Logout()' >Logout </a></li>
+                <li><a ng-if='isLoggedIn()' href=" " ng-click='Logout()'>Logout </a></li>
             </ul>
         </div>
     </div>
 </div>
 
-<h2>hello {{UserName}} this is the Home page</h2>
+<div id="HomeBackground">
+    <div class="container col-sm-12">
+        <!--<div><br><br><br>-->
+            <div class="panel-heading col-xs-3 inlineDiv" >
+                <h2 id="summaryTitle" >MyOrganizer</h2>
+                <h4 id="summaryDetails" > you can user the MyOrganize App to save your addressBook , meetings and tasks. and you can search, edit and delete each item of these. also you can check your tasks due this month in the home page.</h4>
+                <h2 id="summaryTitle" >AddressBooks</h2>
+                <h2 id="summaryTitle" >Tasks</h2>
+                <h2 id="summaryTitle" >Meetings</h2>
+                <br>
+            <!--</div>-->
+        </div>
 
-<div ng-repeat="item in TasksListToDo" class="ToDoList" ng-show="ToDoList" >
-    <div class="panel panel-default panel-body ">
-        <div class="col-xs-8">
-             <div class="col-xs-4">{{item.TaskName}} &nbsp; {{item.TaskDate}}</div>
-             <div class="col-xs-2"> {{item.Description}} </div>
+
+        <!--<div>
+            
+            <div class="panel-heading col-xs-3 col-sm-offset-1 inlineDiv">
+                <h2 id="summaryTitle">MyOrganizer</h2>
+                <h4 id="summaryDetails"> you can user the MyOrganize App to save your addressBook , meetings and tasks. and you can search, edit and delete each item of these. also you can check your tasks due this month in the home page.</h4>
+                <h2 id="summaryTitle">AddressBooks</h2>
+                <h2 id="summaryTitle">Tasks</h2>
+                <h2 id="summaryTitle">Meetings</h2>
+                <br>
+            </div>
+        </div>-->
+
+        <div class="container ToDoList inlineDiv col-sm-9">
+            <div class=" panel panel-body col-sm-10 col-sm-offset-1 " id="TaskToDoList">
+                <div class="form-group ToDoTitle AbTitle">TASK LIST</div>
+                <div class="form-group ">
+                    <div ng-repeat="item in TasksListToDo">
+                        <div class="panel panel-default panel-body col-xs-10 col-sm-offset-1 " id="TListToDoItemBg">
+                            <div class="col-xs-10">{{item.TaskName}} &nbsp; {{item.TaskDate | date:"MM/dd/yyyy "}}</div>
+                            <div class="col-xs-10"> {{item.Description}} </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" panel panel-body col-sm-10 col-sm-offset-1" id="MeetingToDoList">
+                <div class="form-group ToDoTitle AbTitle">MEETING LIST</div>
+                <div class="form-group">
+                    <div ng-repeat="item2 in MeetingListToDo">
+                        <div class="panel panel-default panel-body col-xs-10 col-sm-offset-1 " id="MListToDoItemBg">
+                            <div class="col-xs-10">{{item2.MeetingName}} &nbsp; {{item2.MeetingDate | date:"MM/dd/yyyy "}}</div>
+                            <div class="col-xs-10"> {{item2.Notes}} </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
      </div>
 </div>
 
-<div ng-repeat="item2 in MeetingListToDo" class="ToDoList" ng-show="ToDoList">
-    <div class="panel panel-default panel-body ">
-        <div class="col-xs-8">
-            <div class="col-xs-4">{{item2.MeetingName}} &nbsp; {{item2.MeetingDate}}</div>
-            <div class="col-xs-2"> {{item2.Notes}} </div>
-        </div>
-    </div>
-</div>
 

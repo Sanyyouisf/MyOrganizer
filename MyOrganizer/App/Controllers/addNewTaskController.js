@@ -2,6 +2,8 @@
 
     $scope.alerts = [];
 
+    $scope.newTask = { Interval: 'None', Period: 'None' };
+
     $scope.addAlert = function () {
         $scope.alerts.push({ msg: 'Another alert!' });
         console.log("inside addAlert");

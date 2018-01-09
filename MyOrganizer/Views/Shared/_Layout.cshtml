@@ -4,27 +4,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link href='https://fonts.googleapis.com/css?family=Vast Shadow' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body ng-app="MyOrganizer">
     <div class="navbar navbar-inverse navbar-fixed-top mainnavbar">
-        @*<div class="container">*@
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav"> 
-                    <li id="appName"> <a> My Organizer</a></li>
-                    <li><a ng-if='isloggedin()' ng-href="#!/addressbook">address book</a></li>
-                    <li><a ng-if='isloggedin()' ng-href="#!/task">hi</a></li>
-                    <li><a ng-if='isloggedin()' ng-href="#!/meeting">meeting</a></li>
-                    <li><a ng-if='isloggedin()' ng-click='logout()'  href= " ">logout </a></li>
-                </ul>
-            </div>
-        @*</div>*@
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav"> 
+                <li id="appName"> <a> My Organizer</a></li>
+                <li><a ng-if='isloggedin()' ng-href="#!/addressbook">address book</a></li>
+                <li><a ng-if='isloggedin()' ng-href="#!/task">Task</a></li>
+                <li><a ng-if='isloggedin()' ng-href="#!/meeting">meeting</a></li>
+                <li><a ng-if='isloggedin()' ng-click='logout()'  href= " ">logout </a></li>
+            </ul>
+        </div>
     </div>
     <div class="container body-content" id="bodyContainer">
         @RenderBody()
-        <hr />
+        @*<hr />*@
         <footer>
             <p id="footer">&copy; @DateTime.Now.Year - My Organizer App Sany Yousif</p>
         </footer>

@@ -24,55 +24,58 @@ nav bar and footer
 list Items
 ##############################*/
 .title {
-    font-size: 2.2rem;
-    color:white;
+    font-size: 3rem;
 }
 
-#item {
-    font-size: 1.5rem;
+#ListItems {
+    font-size: 2rem;
     color: black;
     background-color: #f0fff0;
+    margin: 15px;
+    box-shadow: 5px 5px 5px #bbb0b0;
+    border: 1px solid grey;
 }
+#ListFrame {
+    box-shadow: 5px 5px 5px #9c6767;
+    border: 1px solid grey;
+}
+
+#listTitle {
+    box-shadow: 5px 5px 5px #bbb0b0;
+    border: 1px solid grey;
+    background-color: lightcyan;
+}
+
 
 .list {
     margin-top: 20px;
 }
 
-#newAddressForm  {
-    border-color: green;
+#newAddressForm, #editAddressForm, #editMForm, #newMForm, #editTForm, #newTForm {
+    border-color: brown;
     border-style: solid;
     border-radius: 15px;
     padding: 30px 30px;
     background-color: cornsilk;
     margin-top: 20px;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 5px #938787;
+    border: 1px solid grey;
+    font-size: 2rem;
 }
 
-#editAddressForm {
-    border-color: green;
-    border-style: solid;
-    border-radius: 15px;
-    padding: 30px 30px;
-    background-color: cornsilk;
-    margin-top: 20px;
-}
     
 .alert {
         margin: 20px auto;
         text-align: center;
     }
 
-#inlineInputBox {
-     display:inline-block;
- }
+#inlineAbInputBox, #inlineMInputBox, #inlineTInputBox {
+    display: inline-block;
+}
 
 .span {
     font-weight: bold;
-}
-
-.AbBackground {
-    background-image: url("/Picture/ABList3.jpg");
-    background-repeat:no-repeat;
-    background-size: cover;
 }
 
 #bodyContainer {
@@ -86,21 +89,246 @@ list Items
     padding: 0;
 }
 
-.AbTitle {
+.AbTitle, .MTitle, .TTitle {
     font-family: 'Vast Shadow';
+    font-size:3rem;
 }
 
-#singleAddress {
-    border-color: green;
+#singleAddress, #singleMeeting, #singleTask {
+    border-color: #1e2453;
     border-style: solid;
     border-radius: 15px;
     padding: 30px 30px;
     background-color: cornsilk;
     margin-top: 20px;
+    box-shadow: 5px 5px 5px #938787;
+    border: 1px solid grey;
+    font-size:2rem;
 }
 
 .space {
     margin: 20px 10px;
+}
+
+/*##############################
+To Do list Items
+##############################*/
+
+#TaskToDoList, #MeetingToDoList {
+    border-color: #9c6767;
+    border-style: solid;
+    border-radius: 15px;
+    padding: 30px 30px;
+    background-color: #f1c0c0;
+    margin-top: 20px;
+    border-width: 2px;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.inlineDiv {
+    display:inline-block;
+}
+
+#summary {
+    border-style: solid;
+    border-radius: 40%;
+    border-color: #9c6767;
+    border-width: 1px;
+    font-size:2rem;
+    background-color: #e8e9dc;
+    color:brown;
+}
+
+#summaryTitle {
+    background-color: #e8e9dc;
+    border-style: solid;
+    font-weight:bold;
+    border-radius: 40%;
+    border-color: #9c6767;
+    border-width: 1px;
+    font-size: 3rem;
+    padding: 10px;
+    margin: 15px 15px;
+    font-family: 'Indie Flower', cursive;
+    color: black;
+    text-align: center;
+}
+
+
+#summaryDetails {
+    padding: 30px;
+    color: #07096d;
+    background-color: #e8e9dc;
+    font-size: 2.5rem;
+    border-style: solid;
+    border-radius:20%;
+    margin:20px 0;
+    border-color: #9c6767;
+    border-width: 1px;
+}
+
+#TListToDoItemBg, #MListToDoItemBg {
+    background-color: #ffffe0;
+    color: black;
+    font-size: 1.5rem;
+    border-color: brown;
+    /*border-color: #9c6767;*/
+    border-style: solid;
+    border-radius: 5px;
+    /*padding: 30px 30px;*/
+    /*background-color: #f1c0c0;*/
+    /*margin-top: 20px;*/
+    border-width: 2px;
+    box-shadow: 5px 5px 5px #c28b8b;
+    /*font-weight:bold;*/
+}
+
+.ToDoTitle {
+    color: brown;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.panelListTitle {
+    color: brown;
+    padding-top: 30px;
+    background-color:deeppink;
+    border:solid 2px pink;
+}
+
+    .panelListItem {
+
+    }
+
+.frame {
+    box-shadow: 3px 3px 3px grey;
+    border: 1px solid grey;
+    border-radius: 3px;
+}
+
+.panelItems {
+    margin: 15px;
+    box-shadow: 10px 10px 5px grey;
+    border: 1px solid grey;
+}
+
+    /*##############################
+background pictures
+##############################*/
+#HomeBackground {
+    background: url("/Picture/LOGO 8.png");
+    background-repeat: no-repeat;
+    background-color: #f5f5dc;
+    background-size: cover;
+    opacity: .8;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-bottom: 30px;
+    min-height: 700px;
+}
+
+
+#AbBackground {
+    background: url("/Picture/addressBookBg.jpg");
+    background-repeat: no-repeat;
+    background-color: #f5f5dc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-bottom: 30px;
+    min-height: 700px;
+}
+
+#newAbBackground {
+    background: url("/Picture/addressBookBg.jpg");
+    background-repeat: no-repeat;
+    background-color: #f5f5dc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /*margin-bottom: 30px;*/
+    min-height: 694px;
+}
+#singleAbBackground {
+    background: url("/Picture/addressBookBg.jpg");
+    background-repeat: no-repeat;
+    background-color: #f5f5dc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+
+#TaskBackground {
+    background: url("/Picture/TaskBackground.jpg");
+    background-repeat: no-repeat;
+    background-color: #f5f5dc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-bottom: 30px;
+    min-height: 694px;
+}
+
+
+#newTaskBackground, #singleTaskBackground {
+    background: url("/Picture/TaskBackground.jpg");
+    background-repeat: no-repeat;
+    background-color: #f5f5dc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+#MeetingBackground {
+    background: url("/Picture/MeetingBackground.jpg");
+    background-repeat: no-repeat;
+    background-color: #f5f5dc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-bottom: 30px;
+    min-height: 700px;
+}
+
+#newMeetingBackground, #singleMeetingBackground {
+    background: url("/Picture/MeetingBackground.jpg");
+    background-repeat: no-repeat;
+    background-color: #f5f5dc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+/*##############################
+login page 
+##############################*/
+.loginBackground {
+    background: url("/Picture/logo66.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-color: #d3d3d3;*/
+    opacity: .9;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
 }
 
 

@@ -16,42 +16,43 @@
     </div>
 </div>
 
-<h1 class="col-sm-offset-2">single address</h1>
-<div class="panel panel-body col-sm-8 col-sm-offset-2" id="singleAddress">
+<div id="singleAbBackground">
+    <h1 class="col-sm-offset-2 AbTitle" >{{singleAddress.FirstName }}'s address details</h1>
+    <div class="panel panel-body col-sm-7 col-sm-offset-2" id="singleAddress">
 
-    <div class="row space">
-        <span class="span col-sm-2">Name:</span>
-        <p class="col-xs-8"> {{singleAddress.FirstName}} &nbsp; {{singleAddress.LastName}}</p>
-    </div>
+        <div class="row space">
+            <span class="span col-sm-2">Name:</span>
+            <p class="col-xs-8"> {{singleAddress.FirstName}} &nbsp; {{singleAddress.LastName}}</p>
+        </div>
 
-    <div class="row space">
-         <span class="span col-sm-2">Telpone:</span>
-         <div class="col-xs-3"> {{singleAddress.Tel}} </div>
-    </div>
+        <div class="row space">
+             <span class="span col-sm-2">Telpone:</span>
+             <div class="col-xs-3"> {{singleAddress.Tel}} </div>
+        </div>
 
-    <div class="row space">
-         <span class="span col-sm-2">Email:</span>
-         <div class="col-xs-4"> {{singleAddress.Email}}</div>
-    </div>
+        <div class="row space">
+             <span class="span col-sm-2">Email:</span>
+             <div class="col-xs-4"> {{singleAddress.Email}}</div>
+        </div>
 
-    <div class="row space">
-         <span class="span col-sm-2">Address:</span>
-         <div class="col-xs-6">{{singleAddress.Street}}  &nbsp;{{singleAddress.City}} &nbsp;.{{singleAddress.State}},{{singleAddress.Zipcode}}
+        <div class="row space">
+             <span class="span col-sm-2">Address:</span>
+             <div class="col-xs-9">{{singleAddress.Street}}  &nbsp;{{singleAddress.City}} &nbsp;.{{singleAddress.State}},{{singleAddress.Zipcode}}
+             </div>
          </div>
-     </div>
 
-     <div class="row space">
-         <span class="span col-sm-2">RelationShip:</span>
-         <div class="col-xs-2"> {{singleAddress.RelationShip}}</div>
-     </div>
+         <div class="row space">
+             <span class="span col-sm-2">RelationShip:</span>
+             <div class="col-xs-2"> {{singleAddress.RelationShip}}</div>
+         </div>
 
-     <div class="row space">
-        <div class="col-sm-4 col-sm-offset-2">
-            <button class=" btn btn-success glyphicon glyphicon-pencil" ng-click="editSingleAddress(singleAddress.Id)"></button>
-        </div>
-        <div class="col-xs-4 ">
-            <button class="btn btn-danger glyphicon glyphicon-trash" ng-click="deleteSingleAddress(singleAddress.Id)"></button>
+         <div class="row space">
+            <div class="col-sm-4 col-sm-offset-2">
+                <button class=" btn btn-success glyphicon glyphicon-pencil" ng-click="editSingleAddress(singleAddress.Id)"></button>
+            </div>
+            <div class="col-xs-4 ">
+                <button class="btn btn-danger glyphicon glyphicon-trash" ng-click="deleteSingleAddress(singleAddress.Id)"></button>
+            </div>
         </div>
     </div>
-
 </div>

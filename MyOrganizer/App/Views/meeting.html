@@ -15,23 +15,29 @@
     </div>
 </div>
 
+<div id="MeetingBackground">
+    <div class="container"  >
+        <div class="searchText input-group col-md-8 col-md-offset-2 list">
+            <h1 class="MTitle">Meeting List</h1>
+            <input type="text" class="input-lg" placeholder="Search For ..." ng-model="searchText">
+        </div>
 
-<div class="MeetingList">
-    <h1>Meeting List</h1>
-    <div class="searchText ">
-        <input type="text" class="input-lg" placeholder="Search For ..." ng-model="searchText">
-    </div>
-    <div ng-repeat="meeting in meetingList | filter: searchText">
-        <div class="panel panel-default panel-body">
-            <div class="col-xs-8">
+        <div class="panel panelListTitle col-sm-8 col-sm-offset-2 list" id="ListFrame">
+            <div class="panel panel-heading title" id="listTitle">{{UserName}}'s Meeting List</div>
+            <div ng-repeat="meeting in meetingList | filter: searchText">
                 <a ng-href="#!/meeting/{{meeting.Id}}">
-                    <div class="col-xs-4">{{meeting.MeetingName}} &nbsp; {{meeting.MeetingDate}}</div>
-                    <div class="col-xs-2"> {{meeting.Notes}} </div>
+                    <div class="panel panel-success panel-body" id="ListItems">
+                        <div class="col-sm-8">
+                            <div class="col-sm-10">{{meeting.MeetingName}} &nbsp; {{meeting.MeetingDate | date:"MM/dd/yyyy "}}</div>
+                            <div class="col-sm-10"> {{meeting.Notes}} </div>
+                        </div>
+                    </div>
                 </a>
             </div>
         </div>
     </div>
 </div>
+
 
 
 

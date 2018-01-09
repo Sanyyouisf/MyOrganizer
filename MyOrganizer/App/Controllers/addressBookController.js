@@ -3,10 +3,8 @@
     $scope.addressBookList = [];
     $scope.singleaddress = {};
     $scope.alerts = [];
-    //$scope.newAddress = { RelationShip: 2 };
-    $scope.newAddress = {};
-
-
+    $scope.newAddress = { RelationShip: 'Others' };
+    
 //-----------------------------------------------------------------------
     //alerts
     $scope.addAlert = function () {
@@ -38,7 +36,7 @@
 //-----------------------------------------------------------------------
     //get one address
     $scope.getsingleAddress = (Id) => {
-        $location.path(`/addressBook/${Id}`); 
+        $location.path(`/addressBook/test/${Id}`); 
         console.log("inside get single address");
         console.log("the Id :", Id);    
     };

@@ -43,9 +43,6 @@ namespace MyOrganizer.Controllers
             return db.Tasks.Where(c => c.Done.ToString().ToLower() == "false"
                                       && c.TaskDate.Month == DateTime.Today.Month
                                       && c.TaskDate.Year == DateTime.Today.Year);
-            //return db.Tasks.Where(c => c.Done.ToString().ToLower() == "false"
-            //                      && c.TaskDate.Year == DateTime.Today.Year
-            //                      && c.TaskDate.Month == DateTime.Now.AddMonths(1) )
         }
 
 //-------to get single task card---------------------------------------------------------
@@ -265,7 +262,7 @@ namespace MyOrganizer.Controllers
                     var numberOfTasks = 1;
                     for (var i = 0; i < numberOfTasks; i++)
                     {
-                        var today = task.TaskDate.AddDays(i);
+                        var today = task.TaskDate.AddDays(i*7);
                         var tasks = new Tasks { TaskName = task.TaskName, TaskDate = today, Done = task.Done, Description = task.Description, User = task.User };
                         db.Tasks.Add(tasks);
                     }
@@ -278,7 +275,7 @@ namespace MyOrganizer.Controllers
                     var numberOfTasks = 4;
                     for (var i = 0; i < numberOfTasks; i++)
                     {
-                        var today = task.TaskDate.AddDays(i);
+                        var today = task.TaskDate.AddDays(i*7);
                         var tasks = new Tasks { TaskName = task.TaskName, TaskDate = today, Done = task.Done, Description = task.Description, User = task.User };
                         db.Tasks.Add(tasks);
                     }
@@ -291,7 +288,7 @@ namespace MyOrganizer.Controllers
                     var numberOfTasks = 24;
                     for (var i = 0; i < numberOfTasks; i++)
                     {
-                        var today = task.TaskDate.AddDays(i);
+                        var today = task.TaskDate.AddDays(i*7);
                         var tasks = new Tasks { TaskName = task.TaskName, TaskDate = today, Done = task.Done, Description = task.Description, User = task.User };
                         db.Tasks.Add(tasks);
                     }
@@ -304,7 +301,7 @@ namespace MyOrganizer.Controllers
                     var numberOfTasks = 52;
                     for (var i = 0; i < numberOfTasks; i++)
                     {
-                        var today = task.TaskDate.AddDays(i);
+                        var today = task.TaskDate.AddDays(i*7);
                         var tasks = new Tasks { TaskName = task.TaskName, TaskDate = today, Done = task.Done, Description = task.Description, User = task.User };
                         db.Tasks.Add(tasks);
                     }
@@ -328,7 +325,7 @@ namespace MyOrganizer.Controllers
                     var numberOfTasks = 1;
                     for (var i = 0; i < numberOfTasks; i++)
                     {
-                        var today = task.TaskDate.AddDays(i);
+                        var today = task.TaskDate.AddMonths(i);
                         var tasks = new Tasks { TaskName = task.TaskName, TaskDate = today, Done = task.Done, Description = task.Description, User = task.User };
                         db.Tasks.Add(tasks);
                     }
@@ -341,7 +338,7 @@ namespace MyOrganizer.Controllers
                     var numberOfTasks = 6;
                     for (var i = 0; i < numberOfTasks; i++)
                     {
-                        var today = task.TaskDate.AddDays(i);
+                        var today = task.TaskDate.AddMonths(i);
                         var tasks = new Tasks { TaskName = task.TaskName, TaskDate = today, Done = task.Done, Description = task.Description, User = task.User };
                         db.Tasks.Add(tasks);
                     }
@@ -354,7 +351,7 @@ namespace MyOrganizer.Controllers
                     var numberOfTasks = 12;
                     for (var i = 0; i < numberOfTasks; i++)
                     {
-                        var today = task.TaskDate.AddDays(i);
+                        var today = task.TaskDate.AddMonths(i);
                         var tasks = new Tasks { TaskName = task.TaskName, TaskDate = today, Done = task.Done, Description = task.Description, User = task.User };
                         db.Tasks.Add(tasks);
                     }

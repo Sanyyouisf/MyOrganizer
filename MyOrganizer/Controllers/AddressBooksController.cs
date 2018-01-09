@@ -41,7 +41,7 @@ namespace MyOrganizer.Controllers
                     Email = book.Email,
                     Street = book.Street,
                     City = book.City,
-                    State = book.City,
+                    State = book.State,
                     Zipcode=book.Zipcode,
                     User= book.User,
                     RelationShip = book.RelationShip.ToString()

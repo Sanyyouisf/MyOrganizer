@@ -45,9 +45,6 @@ namespace MyOrganizer.Controllers
             return db.Meetings.Where(M => M.Done.ToString().ToLower() == "false"
                                       && M.MeetingDate.Month == DateTime.Today.Month
                                       && M.MeetingDate.Year == DateTime.Today.Year);
-            //return db.Tasks.Where(c => c.Done.ToString().ToLower() == "false"
-            //                      && c.TaskDate.Year == DateTime.Today.Year
-            //                      && c.TaskDate.Month == DateTime.Now.AddMonths(1) )
         }
 //--------to mark the meeting as Done-----------------------------------------------------------
         // PUT : api/Meetings/Done/3
@@ -266,7 +263,7 @@ namespace MyOrganizer.Controllers
                     var numberOfMeetings = 4;
                     for (var i = 0; i < numberOfMeetings; i++)
                     {
-                        var today = meeting.MeetingDate.AddDays(i);
+                        var today = meeting.MeetingDate.AddDays(i*7);
                         var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today, Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
                         db.Meetings.Add(meetings);
                     }
@@ -279,7 +276,7 @@ namespace MyOrganizer.Controllers
                     var numberOfMeetings = 52;
                     for (var i = 0; i < numberOfMeetings; i++)
                     {
-                        var today = meeting.MeetingDate.AddDays(i);
+                        var today = meeting.MeetingDate.AddDays(i*7);
                         var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today, Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
                         db.Meetings.Add(meetings);
                     }
@@ -303,7 +300,7 @@ namespace MyOrganizer.Controllers
                     var numberOfMeetings = 1;
                     for (var i = 0; i < numberOfMeetings; i++)
                     {
-                        var today = meeting.MeetingDate.AddDays(i);
+                        var today = meeting.MeetingDate.AddMonths(i);
                         var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today, Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
                         db.Meetings.Add(meetings);
                     }
@@ -316,7 +313,7 @@ namespace MyOrganizer.Controllers
                     var numberOfMeetings = 12;
                     for (var i = 0; i < numberOfMeetings; i++)
                     {
-                        var today = meeting.MeetingDate.AddDays(i);
+                        var today = meeting.MeetingDate.AddMonths(i);
                         var meetings = new Meetings { MeetingName = meeting.MeetingName, MeetingDate = today, Done = meeting.Done, Notes = meeting.Notes, User = meeting.User };
                         db.Meetings.Add(meetings);
                     }
@@ -329,7 +326,6 @@ namespace MyOrganizer.Controllers
             return Ok();
         }
 //----------------------------------------------------------------------------------
-
         // DELETE: api/Meetings/5
         [ResponseType(typeof(Meetings))]
         public IHttpActionResult DeleteMeetings(int id)

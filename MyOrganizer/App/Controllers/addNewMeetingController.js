@@ -1,6 +1,8 @@
 ﻿app.controller("addNewMeetingController", ["$scope", "$http", "$rootScope", "$location", function ($scope, $http, $rootScope, $location) {
 
     $scope.alerts = [];
+    $scope.newMeeting = { Interval: 'None', Period: 'None' };
+
 
     $scope.addAlert = function () {
         $scope.alerts.push({ msg: 'Another alert!' });

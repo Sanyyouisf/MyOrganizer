@@ -5,8 +5,8 @@
     $rootScope.currentToken = "";
     $scope.auth = {};
     $scope.userLogin = {
-        username: "sany4",
-        password:"Admin@123"
+        username: "sanyyousif",
+        password:"123456"
     };
   
     $scope.alerts = [];
