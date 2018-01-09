@@ -16,7 +16,7 @@
 </div>
 
 <div id="newTaskBackground">
-     <h3 class=" col-md-6 col-md-offset-3">Add new Task</h3>
+     <h3 class=" col-md-6 col-md-offset-3 AbTitle">Add new Task</h3>
     <div class="container panel-body ">
         <div class=" col-sm-6 col-sm-offset-2" id="newTForm">
             <div class="form-group">
@@ -66,7 +66,7 @@
                 </div>
                 <button class="btn btn-default " ng-click="addNewTask()">Submit</button>
                 <div class="container">
-                    <div ng-repeat="alert in alerts" ng-class="'alert-' + 'warning'" close="closeAlert($index)" class="alert col-xs-4 col-xs-offset-4">
+                    <div ng-repeat="alert in alerts" ng-class="'alert-' + 'danger'" close="closeAlert($index)" class="alert col-xs-6 col-xs-offset-4">
                         {{alert.msg}}
                     </div>
                 </div>

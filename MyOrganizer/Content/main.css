@@ -215,17 +215,19 @@ To Do list Items
     /*##############################
 background pictures
 ##############################*/
-    #HomeBackground {
-        background: url("/Picture/LOGO 8.png");
-        background-repeat: no-repeat;
-        background-color: #f5f5dc;
-        background-size: cover;
-        opacity: .8;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
+#HomeBackground {
+    background: url("/Picture/LOGO 8.png");
+    background-repeat: no-repeat;
+    background-color: #f5f5dc;
+    background-size: cover;
+    opacity: .8;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-bottom: 30px;
+    min-height: 700px;
+}
 
 
 #AbBackground {
@@ -236,12 +238,24 @@ background pictures
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
-    position:relative;
-    margin-bottom:30px;
-    /*margin-top:10px;*/
+    position: relative;
+    margin-bottom: 30px;
+    min-height: 700px;
 }
 
-#newAbBackground,#singleAbBackground {
+#newAbBackground {
+    background: url("/Picture/addressBookBg.jpg");
+    background-repeat: no-repeat;
+    background-color: #f5f5dc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /*margin-bottom: 30px;*/
+    min-height: 694px;
+}
+#singleAbBackground {
     background: url("/Picture/addressBookBg.jpg");
     background-repeat: no-repeat;
     background-color: #f5f5dc;
@@ -252,6 +266,7 @@ background pictures
     position: fixed;
 }
 
+
 #TaskBackground {
     background: url("/Picture/TaskBackground.jpg");
     background-repeat: no-repeat;
@@ -260,7 +275,7 @@ background pictures
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
-    position: relative ;
+    position: relative;
     margin-bottom: 30px;
     min-height: 694px;
 }
@@ -287,6 +302,7 @@ background pictures
     height: 100%;
     position: relative;
     margin-bottom: 30px;
+    min-height: 700px;
 }
 
 #newMeetingBackground, #singleMeetingBackground {

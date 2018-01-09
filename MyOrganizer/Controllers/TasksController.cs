@@ -43,9 +43,6 @@ namespace MyOrganizer.Controllers
             return db.Tasks.Where(c => c.Done.ToString().ToLower() == "false"
                                       && c.TaskDate.Month == DateTime.Today.Month
                                       && c.TaskDate.Year == DateTime.Today.Year);
-            //return db.Tasks.Where(c => c.Done.ToString().ToLower() == "false"
-            //                      && c.TaskDate.Year == DateTime.Today.Year
-            //                      && c.TaskDate.Month == DateTime.Now.AddMonths(1) )
         }
 
 //-------to get single task card---------------------------------------------------------

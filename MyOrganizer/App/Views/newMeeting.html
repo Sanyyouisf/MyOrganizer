@@ -44,32 +44,34 @@
                  <div class="repeateMeeting" ng-show="repeateMeeting">
                      <div class="form-group">
                          <span class="span col-sm-3">Repeate every</span>
-                         <select ng-model="newMeeting.Interval">
-                             <option value="0">None</option>
-                             <option value="1">Daily</option>
-                             <option value="2">Weekly</option>
-                             <option value="3">Monthly</option>
-                         </select>
-                     </div>
-                     <div class="form-group">
+                         <div class="form-group row col-sm-3">
+                             <select ng-model="newMeeting.Interval">
+                                 <option value="0">None</option>
+                                 <option value="1">Daily</option>
+                                 <option value="2">Weekly</option>
+                                 <option value="3">Monthly</option>
+                             </select>
+                         </div>
                          <span class="span col-sm-3">Repeating Period</span>
-                         <select ng-model="newMeeting.Period">
-                             <option value="0">None</option>
-                             <option value="1">Week</option>
-                             <option value="2">Month</option>
-                             <option value="3">OneYear</option>
-                         </select>
-                     </div>
+                         <div class="form-group row ">
+                             <select ng-model="newMeeting.Period">
+                                 <option value="0">None</option>
+                                 <option value="1">Week</option>
+                                 <option value="2">Month</option>
+                                 <option value="3">OneYear</option>
+                             </select>
+                         </div>
                  </div>
 
                  <button class="btn btn-default " ng-click="addNewMeeting()">Submit</button>
 
                  <div class="container">
-                     <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + 'warning'" close="closeAlert($index)" class="alert col-xs-4 col-xs-offset-4">
+                     <div ng-repeat="alert in alerts" ng-class="'alert-' + 'danger'" close="closeAlert($index)" class="alert col-xs-6 col-xs-offset-4">
                          {{alert.msg}}
                      </div>
                  </div>
-             </div>
-         </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
