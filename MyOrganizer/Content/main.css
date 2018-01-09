@@ -260,9 +260,11 @@ background pictures
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
-    position: relative;
+    position: relative ;
     margin-bottom: 30px;
+    min-height: 694px;
 }
+
 
 #newTaskBackground, #singleTaskBackground {
     background: url("/Picture/TaskBackground.jpg");

@@ -30,7 +30,7 @@
                 <div class="form-group row">
                     <span class="span col-sm-3">Task date</span>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="singleTask.TaskDate"  datepicker-popup="MM/dd/yyyy"  id="inlineMInputBox" ng-model="singleTask.TaskDate"  is-open="isOpened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                        <input type="text" class="form-control" placeholder= {{singleTask.TaskDate | date:"MM/dd/yyyy"}} datepicker-popup="MM/dd/yyyy" id="inlineMInputBox" ng-model="singleTask.TaskDate"  is-open="isOpened2" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
                         <span class="input-group-btn"></span>
                     </div>
                 </div>
