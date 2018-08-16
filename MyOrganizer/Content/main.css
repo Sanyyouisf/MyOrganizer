@@ -240,7 +240,7 @@ background pictures
     height: 100%;
     position: relative;
     margin-bottom: 30px;
-    min-height: 700px;
+    min-height: 900px;
 }
 
 #newAbBackground {
@@ -253,7 +253,7 @@ background pictures
     height: 100%;
     position: relative;
     /*margin-bottom: 30px;*/
-    min-height: 694px;
+    min-height: 900px;
 }
 #singleAbBackground {
     background: url("/Picture/addressBookBg.jpg");
