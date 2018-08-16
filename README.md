@@ -2,11 +2,11 @@
  
 ### Project Description // Back-End Capstone
 
-This app help me Organize my meetings and my tasks and save my address book lis.
+This app help me save my address book list and Organize my meetings and my tasks.
 
 
 #### App User Login/Register 
-- The app `add` a new user upon `Register`, and automatically completes log-in.
+- The app allow you to `add` a new user upon `Register`, and automatically completes log-in.
 ![Blog Screengrab](https://github.com/Sanyyouisf/MyOrganizer/blob/master/MyOrganizer/Picture/RegisterPage.png)
 
 
@@ -16,27 +16,22 @@ This app help me Organize my meetings and my tasks and save my address book lis.
 
 
 #### Home Page
-- after successfully login you directed to the `home page`.  
+- after successfully login you directed to the `home page`, that have you Tasks to do list and you meetings to do list during this month.  
 ![Blog Screengrab](https://github.com/Sanyyouisf/MyOrganizer/blob/master/MyOrganizer/Picture/HomePage.png)
 
 
-#### Parent Profile
-- the parent can check the `activity list` and child list.  
-![Blog Screengrab](https://raw.githubusercontent.com/Sanyyouisf/TCA/README/public/DataBase/ReadMePic/ParentProfilePage.jpg)
-
-
 #### Address Book List
-- you can see all you `address book list` that you have saved  
+- you can see all your `address book list` that you have saved previously.  
 ![Blog Screengrab](https://github.com/Sanyyouisf/MyOrganizer/blob/master/MyOrganizer/Picture/AddressBookListPage.png)
 
 
 #### single Address  
-- you can click at any one of the list to be displayed in a `single page` , you can then edit or delete.and the same for the meetings and the tasks.
+- you can click at any one of the list to be displayed in a `single page` , you can then edit or delete.
 ![Blog Screengrab](https://github.com/Sanyyouisf/MyOrganizer/blob/master/MyOrganizer/Picture/SingleAddressPage.png)
 
 
 #### Meetings List 
-- you can also display your `Meetings List` that you have saved, you can also click at any one to have it displayed in a seprate page. 
+- you can also display your `Meetings List` that you have saved previously, you can also click at any one to have it displayed in a seprate page. 
 ![Blog Screengrab](https://github.com/Sanyyouisf/MyOrganizer/blob/master/MyOrganizer/Picture/MeetingsList.png)
 
 
@@ -52,7 +47,7 @@ This app help me Organize my meetings and my tasks and save my address book lis.
 - `Angular`
 - `ASP.NET API`
 - `Bootstrap`
--`Visual Studio`
+- `Visual Studio`
 
 
 ### Contributor
